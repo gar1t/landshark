@@ -1,0 +1,1 @@
+ERL_OPTS := -pa ../../ebin -pa ../../../mochiweb/ebin

@@ -1,0 +1,17 @@
+===============
+ Documentation
+===============
+
+Documentation is currently maintained as Sphinx sources in the docs directory
+of this project.
+
+To build the documentation, you need Sphinx installed:
+
+  easy_install sphinx
+
+If you don't have easy_install installed, see:
+
+  http://pypi.python.org/pypi/setuptools.
+
+If you have a standard package manager such as apt-get or yum, search for
+python-setuptools or similar.

@@ -1,0 +1,208 @@
+=============
+ Page Layout
+=============
+
+Landshark uses compiled Erlang modules to render page. It does not use text
+templates. This may come as a surprise to web developers that are used to
+building pages in a combination of XML/HTML and some other
+declarative/imperative markup.
+
+The following HTML:
+
+.. code-block:: html
+
+  <p>This is an <em>HTML snippet</em>.</p>
+
+can be specified in Landshark as the following Erlang tuple::
+
+  {p, ["This is an ", {em, "HTML snippet"}, "."]}
+
+This is the default page rendering scheme in Landshark, though it does not
+preclude the use of templating langauges.
+
+Some of the benefits of using Erlang to generate HTML are:
+
+- Erlang functions provide encapsulation and reuse of page rendering logic
+- Erlang tuples provide compact representation of HTML structure
+- Erlang modules are compiled and provide high performance rendering without
+  the need for an optimizing template processor
+
+A Simple Page
+=============
+
+Landshark provides a utilizie ``shark_http`` page generation.
+
+Here's the snippet above that you can test in an Erlang shell::
+
+  io:format(shark_html:render({p, ["This is an ", {em, "HTML snippet"}, "."]}))
+
+It prints:
+
+.. code-block:: html
+
+  <p>This is an <em>HTML snippet</em>.</p>
+
+This is how HTML can be provided in HTTP responses.
+
+The ``shark_response`` module provides a convenient way to respond to
+requests. Here's an example of simple page:
+
+.. literalinclude:: ../examples/src/simplepage.erl
+
+In this example, the application function ``app/1`` uses
+``shark_response:ok/1`` to provide a complete response consisting of the
+response status of ``200``, default HTML headers, and the rendered HTML body
+content.
+
+.. note::
+
+   You can run any of the samples in ``examples/src`` using::
+
+      make MOD=<modname> run
+
+   where ``modname`` is the name of the sample module. For example, to run
+   the sample above, change to ``examples/src`` and type::
+
+     make MOD=simplepage run
+    
+
+Page Construction
+=================
+
+While not formally defined, by convention there are two types of page
+constructs in Erlang:
+
+- Containers
+- Page content
+
+Containers, which are also content, provide structure around other content. The
+most obvious form of container is the page itself. Pages are often further
+decontructed into sub-containers such as headers, columns, footers, etc.
+
+Page content is placed within containers. An example of page content might be a
+header that gives an application a common look and feel across a number of
+pages.
+
+Containers and page content are not formally defined or enforced abstractions
+in Landshark. They are merely conventions that developers are encouraged to use
+when building an application.
+
+Let's look at a more complete example of a page that is rendered using a
+container and three pieces of content: a header, a body, and a footer.
+
+.. literalinclude:: ../examples/src/pageconstruct.erl
+
+The container is defined by the function ``template/3``. It takes as arguments
+header content, body content, and footer content. By defining the page
+structure in a separate layout function, it's easy to both understand and
+maintain a page structure without concern for the content.
+
+The content is defined by the three functions ``header/0``, ``body/0``, and
+``footer/0``. Like the container function, the content functions are easy to
+understand in maintain.
+
+To design a more advanced page layout scheme, this pattern can be extended in
+various ways:
+
+- A layout-specific module can provide site templates that are adopted and
+  evolved for an application.
+- Widget generating modules can be used to create page content for logos,
+  database content, multi-column text -- anything that can be represented in
+  HTML content.
+
+Comparison to Django
+====================
+
+Here's a sample Django template:
+
+.. code-block:: html
+
+  <body>
+    <div id="header">My Site</div>
+      <div id="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/links/">Links</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+      <div id="content">
+      <div id="primary">
+        <h1>{% block title %}{% endblock %}</h1>
+        {% block primary %}{% endblock %}
+      </div>
+    </div>
+  </body>
+
+  {% block title %}My Page Headline{% endblock %}
+  {% block primary %}
+  {% for object in latest %}
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.pub_date }}</p>
+    {{ object.body_html|truncatewords_html:"20"|safe }}
+    <p>tags: {% for tag in object.get_tags%}
+      <a href="/blog/tags/{{tag.name|slugify}}/">{{tag}}</a>{% endfor %}</p>
+    <p><a href="{{object.get_absolute_url}}">read more</a></p>
+  {% endfor %}
+  {% endblock %}
+
+Here's what it looks like as Landshark page content in Erlang (formatting
+functions assumed to be in a single ``util`` module)::
+
+  page(Latest) ->
+    body("My Page Headline", lists:map(fun object/1, Latest)).
+
+  body(Title, Primary) ->
+    {body,
+      [{'div', [{id, header}], "My Site"},
+       {'div', [{id, nav}],
+        {ul,
+         [{li, {a, [{href, "/"}], "Home"}},
+          {li, {a, [{href, "/blog/"}], "Blog"}},
+          {li, {a, [{href, "/links/"}], "Links"}},
+          {li, {a, [{href, "/about/"}], "About"}}]}},
+       {'div', [{id, content}],
+        {'div', [{id, primary}], [{h1, Title}, Primary]}}]},
+
+  object({Title, Date, Body, Tags, Url}) ->
+    [{h2, Title},
+     {p, Date},
+     util:safe(util:truncatewords_html(Body, 20)),
+     {p, ["tags: ", lists:map(fun tag/1, Tags)]},
+     {p, {a, [{href, Url}], "read more"}}].
+
+  tag({Name, Tag}) ->
+    {a, [{href, lists:concat("/blog/tags/", util:slugify(Name))}], Tag}.
+
+Takeaway:
+
+* While it may take some getting used to, Landshark structured content is
+  readable
+* Erlang uses functions for code reuse
+* Erlang functions are more explicit than Django blocks
+
+The primary advantage to Erlang functions is that they lend themselves to
+ongoing refactoring to improve the readability, maintainability, and
+leveragability of code. Any piece of the page rendering logic above can be
+extracted into a function and made available for use both within the module and
+by other modules. In contrast to templating langauges like Django's, the
+process of deconstructing page rendering logic in Erlang generally *improves*
+the code rather than degrade. it.
+
+Here's the same page, deconstructed to use high level functions (omitted for
+brevity)::
+
+  page(Latest) ->
+    body("My Page Headline", lists:map(fun object/1, Latest)).
+
+  body(Title, Primary) ->
+    {body, [header("My Site"),
+            navigation([{"/", "Home"},
+                        {"/blog/", "Blog"},
+                        {"/links/", "Links"}, 
+                        {"/about/", "Aboute"}]),
+            primary(Title, Primary)]}.
+
+Of course, this approach can be taken with Django using Python with the same
+benefits.

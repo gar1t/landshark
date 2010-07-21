@@ -1,0 +1,32 @@
+==============
+ Installation
+==============
+
+Not-Really Installation
+=======================
+
+Landshark doesn't have a proper installation routine at the moment.
+
+For a "not really" installation, grab both Mochiweb and Landshark from github,
+installing them into a common root directory:
+
+.. code-block:: bash
+
+   git clone http://github.com/mochi/mochiweb.git
+   git clone http://github.com/gar1t/landshark.git
+
+Make each project:
+
+.. code-block:: bash
+
+   make -C mochiweb
+   make -C landshark
+
+When modifying the `Dependencies` file (see :doc:`quickstart`), include the
+respective paths to these two libraries.
+
+.. note::
+
+   To keep things simple, create any Landshark projects (using the ``empty``
+   project skeleton) in the same top level directory -- the make files are
+   setup to look there for dependencies.

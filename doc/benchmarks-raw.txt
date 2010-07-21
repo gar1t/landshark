@@ -1,0 +1,5337 @@
+.. _ab_raw:
+
+======================
+ab Benchmarks Raw Data
+======================
+
+This is the raw data from the tests.
+
+* :ref:`ab_100x`
+* :ref:`ab_1000x`
+* :ref:`ab_10000x`
+* :ref:`ab_20000x`
+
+.. _ab_100x:
+
+ab - 100x
+=========
+
+Landshark
+---------
+::
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.002 seconds
+  Complete requests:      46051
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7552364 bytes
+  HTML transferred:       1703887 bytes
+  Requests per second:    4604.29 [#/sec] (mean)
+  Time per request:       21.719 [ms] (mean)
+  Time per request:       0.217 [ms] (mean, across all concurrent requests)
+  Transfer rate:          737.41 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    4 108.2      0    8999
+  Processing:     0    7  40.1      7    6697
+  Waiting:        0    7  40.1      7    6697
+  Total:          1   11 127.5      7    9696
+
+  Percentage of the requests served within a certain time (ms)
+    50%      7
+    66%      7
+    75%      7
+    80%      7
+    90%      7
+    95%      8
+    98%     10
+    99%     12
+   100%   9696 (longest request)
+
+  ---------------
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      43054
+  Failed requests:        63
+     (Connect: 0, Receive: 21, Length: 21, Exceptions: 21)
+  Write errors:           0
+  Total transferred:      7057412 bytes
+  HTML transferred:       1592221 bytes
+  Requests per second:    4305.34 [#/sec] (mean)
+  Time per request:       23.227 [ms] (mean)
+  Time per request:       0.232 [ms] (mean, across all concurrent requests)
+  Transfer rate:          689.19 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    5 144.5      0    9003
+  Processing:     0   11 124.7      7    6709
+  Waiting:        0    9 102.1      7    6709
+  Total:          0   16 237.7      7    9709
+
+  Percentage of the requests served within a certain time (ms)
+    50%      7
+    66%      8
+    75%      8
+    80%      8
+    90%      8
+    95%      9
+    98%     10
+    99%     13
+   100%   9709 (longest request)
+
+  ----------------
+
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      45292
+  Failed requests:        48
+     (Connect: 0, Receive: 16, Length: 16, Exceptions: 16)
+  Write errors:           0
+  Total transferred:      7425264 bytes
+  HTML transferred:       1675212 bytes
+  Requests per second:    4529.20 [#/sec] (mean)
+  Time per request:       22.079 [ms] (mean)
+  Time per request:       0.221 [ms] (mean, across all concurrent requests)
+  Transfer rate:          725.12 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    7 170.7      0    9001
+  Processing:     0   11 156.9      7    6706
+  Waiting:        0   10 144.7      7    6706
+  Total:          0   18 284.3      7    9704
+
+  Percentage of the requests served within a certain time (ms)
+    50%      7
+    66%      7
+    75%      7
+    80%      7
+    90%      8
+    95%      9
+    98%     11
+    99%     14
+   100%   9704 (longest request)
+
+PHP-5
+-----
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.002 seconds
+  Complete requests:      42786
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      12419830 bytes
+  HTML transferred:       1670253 bytes
+  Requests per second:    4277.70 [#/sec] (mean)
+  Time per request:       23.377 [ms] (mean)
+  Time per request:       0.234 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1212.62 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    6   5.9      3      52
+  Processing:     4   17   3.9     17      60
+  Waiting:        2   15   3.9     16      53
+  Total:         15   23   5.8     21      81
+
+  Percentage of the requests served within a certain time (ms)
+    50%     21
+    66%     24
+    75%     27
+    80%     28
+    90%     31
+    95%     32
+    98%     35
+    99%     37
+   100%     81 (longest request)
+
+  ---------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.006 seconds
+  Complete requests:      38820
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      11264760 bytes
+  HTML transferred:       1514916 bytes
+  Requests per second:    3879.79 [#/sec] (mean)
+  Time per request:       25.775 [ms] (mean)
+  Time per request:       0.258 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1099.45 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    9   5.4      8      52
+  Processing:     6   16   3.9     16      53
+  Waiting:        2   14   3.9     13      52
+  Total:         13   26   6.0     25     100
+
+  Percentage of the requests served within a certain time (ms)
+    50%     25
+    66%     28
+    75%     29
+    80%     30
+    90%     32
+    95%     34
+    98%     37
+    99%     40
+   100%    100 (longest request)
+
+  ----------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.010 seconds
+  Complete requests:      44216
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      12831340 bytes
+  HTML transferred:       1725594 bytes
+  Requests per second:    4417.34 [#/sec] (mean)
+  Time per request:       22.638 [ms] (mean)
+  Time per request:       0.226 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1251.85 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    6   5.8      3      38
+  Processing:     4   17   3.4     16      43
+  Waiting:        2   15   3.5     15      42
+  Total:         10   22   6.0     20      68
+
+  Percentage of the requests served within a certain time (ms)
+    50%     20
+    66%     24
+    75%     27
+    80%     28
+    90%     31
+    95%     32
+    98%     36
+    99%     39
+   100%     68 (longest request)
+
+CherryPy
+--------
+::
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.001 seconds
+  Complete requests:      20901
+  Failed requests:        111
+     (Connect: 0, Receive: 37, Length: 37, Exceptions: 37)
+  Write errors:           0
+  Total transferred:      3338560 bytes
+  HTML transferred:       772042 bytes
+  Requests per second:    2089.95 [#/sec] (mean)
+  Time per request:       47.848 [ms] (mean)
+  Time per request:       0.478 [ms] (mean, across all concurrent requests)
+  Transfer rate:          326.01 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   27 280.9      0    3005
+  Processing:     0   12 157.8      3    5701
+  Waiting:        0    5  65.6      2    3690
+  Total:          0   38 390.7      3    8698
+
+  Percentage of the requests served within a certain time (ms)
+    50%      3
+    66%      3
+    75%      3
+    80%      3
+    90%      4
+    95%      5
+    98%      6
+    99%    217
+   100%   8698 (longest request)
+
+  --------------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      21169
+  Failed requests:        171
+     (Connect: 0, Receive: 57, Length: 57, Exceptions: 57)
+  Write errors:           0
+  Total transferred:      3378080 bytes
+  HTML transferred:       781181 bytes
+  Requests per second:    2116.80 [#/sec] (mean)
+  Time per request:       47.241 [ms] (mean)
+  Time per request:       0.472 [ms] (mean, across all concurrent requests)
+  Transfer rate:          329.88 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   25 271.5      0    3002
+  Processing:     0   15 200.1      3    4613
+  Waiting:        0    4  48.0      2    3241
+  Total:          0   39 424.4      3    7613
+
+  Percentage of the requests served within a certain time (ms)
+    50%      3
+    66%      3
+    75%      3
+    80%      3
+    90%      4
+    95%      4
+    98%      6
+    99%     18
+   100%   7613 (longest request)
+
+  -------------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      21030
+  Failed requests:        33
+     (Connect: 0, Receive: 11, Length: 11, Exceptions: 11)
+  Write errors:           0
+  Total transferred:      3363323 bytes
+  HTML transferred:       777740 bytes
+  Requests per second:    2102.90 [#/sec] (mean)
+  Time per request:       47.553 [ms] (mean)
+  Time per request:       0.476 [ms] (mean, across all concurrent requests)
+  Transfer rate:          328.43 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   11 177.6      0    3004
+  Processing:     0    8 148.4      3    6698
+  Waiting:        0    6 126.3      2    6697
+  Total:          0   19 284.9      3    9695
+
+  Percentage of the requests served within a certain time (ms)
+    50%      3
+    66%      3
+    75%      3
+    80%      3
+    90%      4
+    95%      4
+    98%      5
+    99%      7
+   100%   9695 (longest request)
+
+WEBrick
+-------
+::
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.007 seconds
+  Complete requests:      450
+  Failed requests:        135
+     (Connect: 0, Receive: 45, Length: 45, Exceptions: 45)
+  Write errors:           0
+  Total transferred:      204525 bytes
+  HTML transferred:       15390 bytes
+  Requests per second:    44.97 [#/sec] (mean)
+  Time per request:       2223.879 [ms] (mean)
+  Time per request:       22.239 [ms] (mean, across all concurrent requests)
+  Transfer rate:          19.96 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  467 1088.1      0    3004
+  Processing:   146  848 1444.2    291    5168
+  Waiting:        0  361 656.0    265    5152
+  Total:        150 1315 2437.8    295    8167
+
+  Percentage of the requests served within a certain time (ms)
+    50%    295
+    66%    356
+    75%    405
+    80%    452
+    90%   7716
+    95%   7717
+    98%   7717
+    99%   7991
+   100%   8167 (longest request)
+
+  --------------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      433
+  Failed requests:        129
+     (Connect: 0, Receive: 43, Length: 43, Exceptions: 43)
+  Write errors:           0
+  Total transferred:      196950 bytes
+  HTML transferred:       14820 bytes
+  Requests per second:    43.30 [#/sec] (mean)
+  Time per request:       2309.508 [ms] (mean)
+  Time per request:       23.095 [ms] (mean, across all concurrent requests)
+  Transfer rate:          19.23 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  590 1192.0      0    3003
+  Processing:     0 1069 1379.4    563    5194
+  Waiting:        0  585 702.0    488    5175
+  Total:          0 1658 2393.1    642    8194
+
+  Percentage of the requests served within a certain time (ms)
+    50%    641
+    66%    783
+    75%    950
+    80%   1114
+    90%   7686
+    95%   7687
+    98%   7919
+    99%   8032
+   100%   8194 (longest request)
+
+  -----------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.063 seconds
+  Complete requests:      400
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      202467 bytes
+  HTML transferred:       15200 bytes
+  Requests per second:    39.75 [#/sec] (mean)
+  Time per request:       2515.786 [ms] (mean)
+  Time per request:       25.158 [ms] (mean, across all concurrent requests)
+  Transfer rate:          19.65 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  150 836.0      0    8998
+  Processing:    89  367 376.4    300    4577
+  Waiting:       68  348 376.2    281    4563
+  Total:         92  517 942.7    302    9351
+
+  Percentage of the requests served within a certain time (ms)
+    50%    302
+    66%    345
+    75%    398
+    80%    418
+    90%    470
+    95%   1652
+    98%   3333
+    99%   4066
+   100%   9351 (longest request)
+
+Django
+------
+::
+
+ Server Software:        WSGIServer/0.1
+ Server Hostname:        localhost
+ Server Port:            8000
+
+ Document Path:          /
+ Document Length:        37 bytes
+
+ Concurrency Level:      100
+ Time taken for tests:   11.997 seconds
+ Complete requests:      8514
+ Failed requests:        222
+    (Connect: 0, Receive: 74, Length: 74, Exceptions: 74)
+ Write errors:           0
+ Total transferred:      1434800 bytes
+ HTML transferred:       312280 bytes
+ Requests per second:    709.66 [#/sec] (mean)
+ Time per request:       140.912 [ms] (mean)
+ Time per request:       1.409 [ms] (mean, across all concurrent requests)
+ Transfer rate:          116.79 [Kbytes/sec] received
+
+ Connection Times (ms)
+	       min  mean[+/-sd] median   max
+ Connect:        0   30 299.9      0    3000
+ Processing:     1   41 369.0      4    4233
+ Waiting:        0    7  78.2      4    4232
+ Total:          1   72 660.2      4    7230
+
+ Percentage of the requests served within a certain time (ms)
+   50%      4
+   66%      4
+   75%      4
+   80%      5
+   90%      5
+   95%      5
+   98%      8
+   99%   3002
+  100%   7230 (longest request)
+
+ --------------
+
+ Server Software:        WSGIServer/0.1
+ Server Hostname:        localhost
+ Server Port:            8000
+
+ Document Path:          /
+ Document Length:        37 bytes
+
+ Concurrency Level:      100
+ Time taken for tests:   10.802 seconds
+ Complete requests:      8724
+ Failed requests:        183
+    (Connect: 0, Receive: 61, Length: 61, Exceptions: 61)
+ Write errors:           0
+ Total transferred:      1472710 bytes
+ HTML transferred:       320531 bytes
+ Requests per second:    807.65 [#/sec] (mean)
+ Time per request:       123.816 [ms] (mean)
+ Time per request:       1.238 [ms] (mean, across all concurrent requests)
+ Transfer rate:          133.15 [Kbytes/sec] received
+
+ Connection Times (ms)
+	       min  mean[+/-sd] median   max
+ Connect:        0   24 269.4      0    3001
+ Processing:     1   32 317.7      4    7802
+ Waiting:        0    7  96.4      4    7802
+ Total:          3   57 578.0      4   10800
+
+ Percentage of the requests served within a certain time (ms)
+   50%      4
+   66%      4
+   75%      4
+   80%      4
+   90%      4
+   95%      5
+   98%      6
+   99%    217
+  100%  10800 (longest request)
+
+ ---------------
+
+ Server Software:        WSGIServer/0.1
+ Server Hostname:        localhost
+ Server Port:            8000
+
+ Document Path:          /
+ Document Length:        37 bytes
+
+ Concurrency Level:      100
+ Time taken for tests:   10.067 seconds
+ Complete requests:      8433
+ Failed requests:        105
+    (Connect: 0, Receive: 35, Length: 35, Exceptions: 35)
+ Write errors:           0
+ Total transferred:      1427660 bytes
+ HTML transferred:       310726 bytes
+ Requests per second:    837.70 [#/sec] (mean)
+ Time per request:       119.374 [ms] (mean)
+ Time per request:       1.194 [ms] (mean, across all concurrent requests)
+ Transfer rate:          138.49 [Kbytes/sec] received
+
+ Connection Times (ms)
+	       min  mean[+/-sd] median   max
+ Connect:        0   19 234.9      0    3002
+ Processing:     1   21 234.7      4    7069
+ Waiting:        0    7  93.2      4    7068
+ Total:          1   40 452.0      4   10066
+
+ Percentage of the requests served within a certain time (ms)
+   50%      4
+   66%      5
+   75%      5
+   80%      5
+   90%      5
+   95%      6
+   98%      8
+   99%     14
+  100%  10066 (longest request)
+
+Tomcat 6
+---------
+::
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      37874
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      10150232 bytes
+  HTML transferred:       1931574 bytes
+  Requests per second:    3787.39 [#/sec] (mean)
+  Time per request:       26.403 [ms] (mean)
+  Time per request:       0.264 [ms] (mean, across all concurrent requests)
+  Transfer rate:          991.23 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    0   0.9      0      25
+  Processing:     2   26  17.0     23     240
+  Waiting:        2   26  16.9     23     240
+  Total:          5   26  17.0     23     240
+
+  Percentage of the requests served within a certain time (ms)
+    50%     23
+    66%     25
+    75%     27
+    80%     29
+    90%     35
+    95%     41
+    98%     56
+    99%    103
+   100%    240 (longest request)
+
+  ------------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      31594
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      8467192 bytes
+  HTML transferred:       1611294 bytes
+  Requests per second:    3159.38 [#/sec] (mean)
+  Time per request:       31.652 [ms] (mean)
+  Time per request:       0.317 [ms] (mean, across all concurrent requests)
+  Transfer rate:          826.87 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    1   2.7      0      42
+  Processing:     1   31  61.1     22     537
+  Waiting:        1   31  60.9     22     534
+  Total:          3   32  61.1     22     537
+
+  Percentage of the requests served within a certain time (ms)
+    50%     22
+    66%     23
+    75%     24
+    80%     25
+    90%     31
+    95%     47
+    98%     76
+    99%    477
+   100%    537 (longest request)
+
+  -----------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.013 seconds
+  Complete requests:      37214
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      9973352 bytes
+  HTML transferred:       1897914 bytes
+  Requests per second:    3716.42 [#/sec] (mean)
+  Time per request:       26.908 [ms] (mean)
+  Time per request:       0.269 [ms] (mean, across all concurrent requests)
+  Transfer rate:          972.66 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    0   1.1      0      29
+  Processing:     2   27  19.2     23     279
+  Waiting:        1   26  19.1     23     278
+  Total:          7   27  19.3     23     279
+
+  Percentage of the requests served within a certain time (ms)
+    50%     23
+    66%     24
+    75%     26
+    80%     29
+    90%     36
+    95%     42
+    98%     55
+    99%    119
+   100%    279 (longest request)
+
+Jetty 6
+-------
+::
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.001 seconds
+  Complete requests:      9713
+  Failed requests:        225
+     (Connect: 0, Receive: 75, Length: 75, Exceptions: 75)
+  Write errors:           0
+  Total transferred:      1397510 bytes
+  HTML transferred:       366244 bytes
+  Requests per second:    971.21 [#/sec] (mean)
+  Time per request:       102.965 [ms] (mean)
+  Time per request:       1.030 [ms] (mean, across all concurrent requests)
+  Transfer rate:          136.46 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   33 320.5      0    8997
+  Processing:     0   38 415.0      1    5935
+  Waiting:        0    3  78.0      1    4757
+  Total:          0   70 697.2      1    8998
+
+  Percentage of the requests served within a certain time (ms)
+    50%      1
+    66%      1
+    75%      1
+    80%      1
+    90%      1
+    95%      1
+    98%      2
+    99%   3001
+   100%   8998 (longest request)
+
+  ---------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.001 seconds
+  Complete requests:      8559
+  Failed requests:        210
+     (Connect: 0, Receive: 70, Length: 70, Exceptions: 70)
+  Write errors:           0
+  Total transferred:      1230905 bytes
+  HTML transferred:       322582 bytes
+  Requests per second:    855.86 [#/sec] (mean)
+  Time per request:       116.842 [ms] (mean)
+  Time per request:       1.168 [ms] (mean, across all concurrent requests)
+  Transfer rate:          120.20 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   47 373.8      0    3004
+  Processing:     0   34 331.0      1    6706
+  Waiting:        0    7 157.3      1    6706
+  Total:          0   81 660.0      1    9706
+
+  Percentage of the requests served within a certain time (ms)
+    50%      1
+    66%      1
+    75%      1
+    80%      1
+    90%      1
+    95%      2
+    98%     12
+    99%   3648
+   100%   9706 (longest request)
+
+  ---------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.000 seconds
+  Complete requests:      9839
+  Failed requests:        69
+     (Connect: 0, Receive: 23, Length: 23, Exceptions: 23)
+  Write errors:           0
+  Total transferred:      1423320 bytes
+  HTML transferred:       373008 bytes
+  Requests per second:    983.87 [#/sec] (mean)
+  Time per request:       101.640 [ms] (mean)
+  Time per request:       1.016 [ms] (mean, across all concurrent requests)
+  Transfer rate:          138.99 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   41 347.7      0    8999
+  Processing:     0   20 261.6      1    6698
+  Waiting:        0   11 175.9      1    6698
+  Total:          0   61 536.3      1    9696
+
+  Percentage of the requests served within a certain time (ms)
+    50%      1
+    66%      1
+    75%      1
+    80%      1
+    90%      5
+    95%     40
+    98%     76
+    99%   3000
+   100%   9696 (longest request)
+
+Fapws
+-----
+::
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   6.901 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6900000 bytes
+  HTML transferred:       1850000 bytes
+  Requests per second:    7245.68 [#/sec] (mean)
+  Time per request:       13.801 [ms] (mean)
+  Time per request:       0.138 [ms] (mean, across all concurrent requests)
+  Transfer rate:          976.47 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    0   0.9      0      19
+  Processing:     0   14   2.0     14      35
+  Waiting:        0   13   2.1     13      34
+  Total:          3   14   2.0     14      35
+
+  Percentage of the requests served within a certain time (ms)
+    50%     14
+    66%     14
+    75%     14
+    80%     14
+    90%     14
+    95%     16
+    98%     20
+    99%     23
+   100%     35 (longest request)
+
+  -----------
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   6.829 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6900239 bytes
+  HTML transferred:       1850037 bytes
+  Requests per second:    7321.92 [#/sec] (mean)
+  Time per request:       13.658 [ms] (mean)
+  Time per request:       0.137 [ms] (mean, across all concurrent requests)
+  Transfer rate:          986.78 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    0   0.8      0      13
+  Processing:     1   13   1.7     13      32
+  Waiting:        0   13   2.0     13      29
+  Total:          4   14   1.6     13      32
+
+  Percentage of the requests served within a certain time (ms)
+    50%     13
+    66%     14
+    75%     14
+    80%     14
+    90%     14
+    95%     16
+    98%     18
+    99%     20
+   100%     32 (longest request)
+
+  --------------
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   7.190 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6900000 bytes
+  HTML transferred:       1850000 bytes
+  Requests per second:    6954.38 [#/sec] (mean)
+  Time per request:       14.379 [ms] (mean)
+  Time per request:       0.144 [ms] (mean, across all concurrent requests)
+  Transfer rate:          937.21 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    0   1.0      0      14
+  Processing:     1   14   2.6     13      31
+  Waiting:        0   14   2.7     13      30
+  Total:          4   14   2.5     14      31
+
+  Percentage of the requests served within a certain time (ms)
+    50%     14
+    66%     14
+    75%     14
+    80%     15
+    90%     16
+    95%     22
+    98%     23
+    99%     23
+   100%     31 (longest request)
+
+Tornado
+-------
+::
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.016 seconds
+  Complete requests:      27201
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5222592 bytes
+  HTML transferred:       979236 bytes
+  Requests per second:    2715.72 [#/sec] (mean)
+  Time per request:       36.823 [ms] (mean)
+  Time per request:       0.368 [ms] (mean, across all concurrent requests)
+  Transfer rate:          509.20 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    1   0.8      0      19
+  Processing:     3   36   3.8     35      71
+  Waiting:        3   36   3.8     35      71
+  Total:          9   37   3.6     35      71
+  WARNING: The median and mean for the initial connection time are not within a normal deviation
+	  These results are probably not that reliable.
+
+  Percentage of the requests served within a certain time (ms)
+    50%     35
+    66%     36
+    75%     36
+    80%     37
+    90%     44
+    95%     45
+    98%     46
+    99%     47
+   100%     71 (longest request)
+
+  ----------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.012 seconds
+  Complete requests:      26399
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5068608 bytes
+  HTML transferred:       950364 bytes
+  Requests per second:    2636.72 [#/sec] (mean)
+  Time per request:       37.926 [ms] (mean)
+  Time per request:       0.379 [ms] (mean, across all concurrent requests)
+  Transfer rate:          494.38 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    1   1.2      0      22
+  Processing:     3   37   3.4     37      61
+  Waiting:        1   37   3.3     36      61
+  Total:         24   38   3.3     37      62
+
+  Percentage of the requests served within a certain time (ms)
+    50%     37
+    66%     39
+    75%     39
+    80%     40
+    90%     41
+    95%     42
+    98%     47
+    99%     51
+   100%     62 (longest request)
+
+  ---------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.006 seconds
+  Complete requests:      25750
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4944000 bytes
+  HTML transferred:       927000 bytes
+  Requests per second:    2573.56 [#/sec] (mean)
+  Time per request:       38.857 [ms] (mean)
+  Time per request:       0.389 [ms] (mean, across all concurrent requests)
+  Transfer rate:          482.54 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    1   1.4      0      27
+  Processing:     5   38   5.0     36      57
+  Waiting:        4   38   5.1     36      57
+  Total:         20   39   4.5     36      59
+
+  Percentage of the requests served within a certain time (ms)
+    50%     36
+    66%     40
+    75%     44
+    80%     44
+    90%     44
+    95%     47
+    98%     49
+    99%     51
+   100%     59 (longest request)
+
+Phusion/Rack + Apache MPM
+-------------------------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.012 seconds
+  Complete requests:      18557
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6116110 bytes
+  HTML transferred:       687830 bytes
+  Requests per second:    1853.52 [#/sec] (mean)
+  Time per request:       53.951 [ms] (mean)
+  Time per request:       0.540 [ms] (mean, across all concurrent requests)
+  Transfer rate:          596.57 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   13  11.1      9      74
+  Processing:     7   40  11.1     41     237
+  Waiting:        4   37  11.4     38     236
+  Total:         14   53  10.2     51     244
+
+  Percentage of the requests served within a certain time (ms)
+    50%     51
+    66%     54
+    75%     56
+    80%     57
+    90%     65
+    95%     75
+    98%     83
+    99%     88
+   100%    244 (longest request)
+
+  -------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.006 seconds
+  Complete requests:      19048
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6269753 bytes
+  HTML transferred:       705109 bytes
+  Requests per second:    1903.68 [#/sec] (mean)
+  Time per request:       52.530 [ms] (mean)
+  Time per request:       0.525 [ms] (mean, across all concurrent requests)
+  Transfer rate:          611.92 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   14  11.5     11      59
+  Processing:     7   38  11.4     39     239
+  Waiting:        3   35  11.7     36     229
+  Total:         11   52  10.0     50     269
+
+  Percentage of the requests served within a certain time (ms)
+    50%     50
+    66%     53
+    75%     56
+    80%     58
+    90%     63
+    95%     70
+    98%     75
+    99%     80
+   100%    269 (longest request)
+
+  ----------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.013 seconds
+  Complete requests:      18650
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6144404 bytes
+  HTML transferred:       691012 bytes
+  Requests per second:    1862.61 [#/sec] (mean)
+  Time per request:       53.688 [ms] (mean)
+  Time per request:       0.537 [ms] (mean, across all concurrent requests)
+  Transfer rate:          599.27 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        4   25   6.5     25      57
+  Processing:    12   28   7.1     28      72
+  Waiting:        1   25   7.0     25      70
+  Total:         38   53   7.2     52     100
+
+  Percentage of the requests served within a certain time (ms)
+    50%     52
+    66%     54
+    75%     56
+    80%     58
+    90%     63
+    95%     69
+    98%     74
+    99%     77
+   100%    100 (longest request)
+
+modwsgi
+-------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.008 seconds
+  Complete requests:      36588
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      11092830 bytes
+  HTML transferred:       1354570 bytes
+  Requests per second:    3655.82 [#/sec] (mean)
+  Time per request:       27.354 [ms] (mean)
+  Time per request:       0.274 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1082.40 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        2   12   2.4     12      33
+  Processing:     6   15   3.2     15      40
+  Waiting:        1   12   2.8     12      34
+  Total:         15   27   4.0     27      54
+
+  Percentage of the requests served within a certain time (ms)
+    50%     27
+    66%     28
+    75%     29
+    80%     30
+    90%     32
+    95%     34
+    98%     36
+    99%     38
+   100%     54 (longest request)
+
+  ---------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.004 seconds
+  Complete requests:      38578
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      11690952 bytes
+  HTML transferred:       1427608 bytes
+  Requests per second:    3856.30 [#/sec] (mean)
+  Time per request:       25.932 [ms] (mean)
+  Time per request:       0.259 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1141.25 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    7   8.9      4      98
+  Processing:     4   19   7.4     17     118
+  Waiting:        2   17   7.2     16     118
+  Total:          8   26  13.2     22     180
+
+  Percentage of the requests served within a certain time (ms)
+    50%     22
+    66%     26
+    75%     29
+    80%     30
+    90%     33
+    95%     38
+    98%     74
+    99%    102
+   100%    180 (longest request)
+
+  --------------
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      100
+  Time taken for tests:   10.001 seconds
+  Complete requests:      34416
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      10436835 bytes
+  HTML transferred:       1274465 bytes
+  Requests per second:    3441.15 [#/sec] (mean)
+  Time per request:       29.060 [ms] (mean)
+  Time per request:       0.291 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1019.09 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        3   14   3.5     14      28
+  Processing:     6   15   3.5     15      31
+  Waiting:        1   13   4.0     13      28
+  Total:         15   29   3.5     30      57
+
+  Percentage of the requests served within a certain time (ms)
+    50%     30
+    66%     31
+    75%     31
+    80%     32
+    90%     33
+    95%     34
+    98%     35
+    99%     37
+   100%     57 (longest request)
+
+.. _ab_1000x:
+
+ab - 1000x
+==========
+
+Landshark
+---------
+::
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      47647
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7814108 bytes
+  HTML transferred:       1762939 bytes
+  Requests per second:    4764.65 [#/sec] (mean)
+  Time per request:       209.879 [ms] (mean)
+  Time per request:       0.210 [ms] (mean, across all concurrent requests)
+  Transfer rate:          763.09 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   35 375.5      0    9004
+  Processing:     0   13 150.6      7    6703
+  Waiting:        0   13 150.5      7    6703
+  Total:          0   48 444.0      7    9901
+
+  Percentage of the requests served within a certain time (ms)
+    50%      7
+    66%      7
+    75%      7
+    80%      7
+    90%      7
+    95%     10
+    98%     46
+    99%    432
+   100%   9901 (longest request)
+
+  -------------
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.002 seconds
+  Complete requests:      45043
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7387052 bytes
+  HTML transferred:       1666591 bytes
+  Requests per second:    4503.60 [#/sec] (mean)
+  Time per request:       222.044 [ms] (mean)
+  Time per request:       0.222 [ms] (mean, across all concurrent requests)
+  Transfer rate:          721.28 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   25 386.8      0    9000
+  Processing:     0   14 174.5      7    6703
+  Waiting:        0   13 174.4      7    6703
+  Total:          0   39 474.6      7    9702
+
+  Percentage of the requests served within a certain time (ms)
+    50%      7
+    66%      7
+    75%      7
+    80%      7
+    90%      9
+    95%     11
+    98%     20
+    99%     59
+   100%   9702 (longest request)
+
+  -------------
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      41624
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6826336 bytes
+  HTML transferred:       1540088 bytes
+  Requests per second:    4162.30 [#/sec] (mean)
+  Time per request:       240.252 [ms] (mean)
+  Time per request:       0.240 [ms] (mean, across all concurrent requests)
+  Transfer rate:          666.62 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   22 280.4      0    9003
+  Processing:     0   16 187.9      7    6702
+  Waiting:        0   16 187.8      7    6702
+  Total:          1   38 406.7      7    9702
+
+  Percentage of the requests served within a certain time (ms)
+    50%      7
+    66%      9
+    75%      9
+    80%      9
+    90%      9
+    95%     11
+    98%     25
+    99%     76
+   100%   9702 (longest request)
+
+PHP-5
+-----
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      36457
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      10584130 bytes
+  HTML transferred:       1423383 bytes
+  Requests per second:    3645.44 [#/sec] (mean)
+  Time per request:       274.315 [ms] (mean)
+  Time per request:       0.274 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1033.53 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   56 626.6      2    9043
+  Processing:     2   43 140.0     30    5471
+  Waiting:        2   41 140.0     28    5465
+  Total:         20   98 656.2     32    9109
+
+  Percentage of the requests served within a certain time (ms)
+    50%     32
+    66%     41
+    75%     48
+    80%     51
+    90%     64
+    95%     77
+    98%    139
+    99%    816
+   100%   9109 (longest request)
+
+  ----------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.005 seconds
+  Complete requests:      21538
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6248920 bytes
+  HTML transferred:       840372 bytes
+  Requests per second:    2152.63 [#/sec] (mean)
+  Time per request:       464.548 [ms] (mean)
+  Time per request:       0.465 [ms] (mean, across all concurrent requests)
+  Transfer rate:          609.91 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   16  38.3     17    3014
+  Processing:    20  140 837.9     38    9476
+  Waiting:        8  133 837.2     32    9475
+  Total:         25  157 842.6     61    9556
+
+  Percentage of the requests served within a certain time (ms)
+    50%     61
+    66%     68
+    75%     71
+    80%     74
+    90%     78
+    95%     81
+    98%    845
+    99%   3146
+   100%   9556 (longest request)
+
+  -------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      33895
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      9830420 bytes
+  HTML transferred:       1322022 bytes
+  Requests per second:    3389.23 [#/sec] (mean)
+  Time per request:       295.052 [ms] (mean)
+  Time per request:       0.295 [ms] (mean, across all concurrent requests)
+  Transfer rate:          959.92 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   47 565.8      2    9021
+  Processing:     6   57 280.1     30    6858
+  Waiting:        4   55 280.1     27    6857
+  Total:         20  103 657.1     34    9862
+
+  Percentage of the requests served within a certain time (ms)
+    50%     34
+    66%     38
+    75%     42
+    80%     43
+    90%     51
+    95%     65
+    98%    406
+    99%   1795
+   100%   9862 (longest request)
+
+CherryPy
+--------
+::
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      21483
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3437280 bytes
+  HTML transferred:       794871 bytes
+  Requests per second:    2148.12 [#/sec] (mean)
+  Time per request:       465.523 [ms] (mean)
+  Time per request:       0.466 [ms] (mean, across all concurrent requests)
+  Transfer rate:          335.64 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   47 492.1      0    9006
+  Processing:     0   17 270.3      3    6701
+  Waiting:        0   16 270.3      2    6701
+  Total:          0   64 627.1      3    9705
+
+  Percentage of the requests served within a certain time (ms)
+    50%      3
+    66%      3
+    75%      3
+    80%      3
+    90%      4
+    95%      4
+    98%      6
+    99%   3003
+   100%   9705 (longest request)
+
+  -------------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      21241
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3398560 bytes
+  HTML transferred:       785917 bytes
+  Requests per second:    2123.79 [#/sec] (mean)
+  Time per request:       470.856 [ms] (mean)
+  Time per request:       0.471 [ms] (mean, across all concurrent requests)
+  Transfer rate:          331.84 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   66 470.8      0    9000
+  Processing:     0   20 251.5      3    6698
+  Waiting:        0   20 251.5      2    6698
+  Total:          0   86 620.7      3    9700
+
+  Percentage of the requests served within a certain time (ms)
+    50%      3
+    66%      3
+    75%      3
+    80%      3
+    90%      4
+    95%      5
+    98%   2999
+    99%   3008
+   100%   9700 (longest request)
+
+  -----------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      21049
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3368000 bytes
+  HTML transferred:       778850 bytes
+  Requests per second:    2104.88 [#/sec] (mean)
+  Time per request:       475.086 [ms] (mean)
+  Time per request:       0.475 [ms] (mean, across all concurrent requests)
+  Transfer rate:          328.90 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   67 469.8      0    9000
+  Processing:     0   21 266.9      3    7804
+  Waiting:        0   20 266.9      2    7804
+  Total:          0   88 624.2      3    9701
+
+  Percentage of the requests served within a certain time (ms)
+    50%      3
+    66%      3
+    75%      3
+    80%      4
+    90%      4
+    95%      5
+    98%   3000
+    99%   3005
+   100%   9701 (longest request)
+
+WEBrick
+-------
+::
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.004 seconds
+  Complete requests:      594
+  Failed requests:        681
+     (Connect: 0, Receive: 227, Length: 227, Exceptions: 227)
+  Write errors:           0
+  Total transferred:      185335 bytes
+  HTML transferred:       13946 bytes
+  Requests per second:    59.38 [#/sec] (mean)
+  Time per request:       16841.042 [ms] (mean)
+  Time per request:       16.841 [ms] (mean, across all concurrent requests)
+  Transfer rate:          18.09 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 1310 1484.2     48    3006
+  Processing:   379 2178 818.4   1847    4560
+  Waiting:        0  966 825.9   1324    4480
+  Total:        433 3488 2210.9   2140    7566
+
+  Percentage of the requests served within a certain time (ms)
+    50%   2140
+    66%   6132
+    75%   6133
+    80%   6137
+    90%   6138
+    95%   6138
+    98%   6138
+    99%   6138
+   100%   7566 (longest request)
+
+  ----------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.004 seconds
+  Complete requests:      372
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      187860 bytes
+  HTML transferred:       14136 bytes
+  Requests per second:    37.19 [#/sec] (mean)
+  Time per request:       26892.473 [ms] (mean)
+  Time per request:       26.892 [ms] (mean, across all concurrent requests)
+  Transfer rate:          18.34 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  339 925.1      0    3001
+  Processing:   185 1683 520.5   1598    5286
+  Waiting:      136 1660 521.9   1572    5273
+  Total:        250 2022 1023.6   1638    5322
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1638
+    66%   1956
+    75%   2309
+    80%   2481
+    90%   4370
+    95%   4594
+    98%   4638
+    99%   4656
+   100%   5322 (longest request)
+
+  ------------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.003 seconds
+  Complete requests:      553
+  Failed requests:        588
+     (Connect: 0, Receive: 196, Length: 196, Exceptions: 196)
+  Write errors:           0
+  Total transferred:      180752 bytes
+  HTML transferred:       13566 bytes
+  Requests per second:    55.28 [#/sec] (mean)
+  Time per request:       18088.358 [ms] (mean)
+  Time per request:       18.088 [ms] (mean, across all concurrent requests)
+  Transfer rate:          17.65 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 1247 1476.6     21    3004
+  Processing:   406 2311 720.5   2195    4973
+  Waiting:        0 1210 1007.5   1626    4961
+  Total:        435 3557 2043.6   2495    7808
+
+  Percentage of the requests served within a certain time (ms)
+    50%   2487
+    66%   6059
+    75%   6059
+    80%   6066
+    90%   6066
+    95%   6067
+    98%   6067
+    99%   6067
+   100%   7808 (longest request)
+
+Django WSGI
+-----------
+::
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      9414
+  Failed requests:        1641
+     (Connect: 0, Receive: 547, Length: 547, Exceptions: 547)
+  Write errors:           0
+  Total transferred:      1507390 bytes
+  HTML transferred:       328079 bytes
+  Requests per second:    941.35 [#/sec] (mean)
+  Time per request:       1062.302 [ms] (mean)
+  Time per request:       1.062 [ms] (mean, across all concurrent requests)
+  Transfer rate:          147.20 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  189 729.0      0    3002
+  Processing:     1  373 1460.3      4    6862
+  Waiting:        0   12 158.9      4    6572
+  Total:          2  562 2172.9      4    9863
+
+  Percentage of the requests served within a certain time (ms)
+    50%      4
+    66%      4
+    75%      5
+    80%      5
+    90%      5
+    95%   8769
+    98%   9573
+    99%   9780
+   100%   9863 (longest request)
+
+  -----------
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.318 seconds
+  Complete requests:      8821
+  Failed requests:        345
+     (Connect: 0, Receive: 115, Length: 115, Exceptions: 115)
+  Write errors:           0
+  Total transferred:      1480020 bytes
+  HTML transferred:       322122 bytes
+  Requests per second:    854.92 [#/sec] (mean)
+  Time per request:       1169.695 [ms] (mean)
+  Time per request:       1.170 [ms] (mean, across all concurrent requests)
+  Transfer rate:          140.08 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   52 392.1      0    3004
+  Processing:     0   64 497.0      5    7315
+  Waiting:        0    9  94.0      4    2577
+  Total:          1  117 864.6      5   10316
+
+  Percentage of the requests served within a certain time (ms)
+    50%      5
+    66%      5
+    75%      5
+    80%      5
+    90%      5
+    95%      6
+    98%     17
+    99%   7084
+   100%  10316 (longest request)
+
+  --------------
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.250 seconds
+  Complete requests:      10920
+  Failed requests:        1881
+     (Connect: 0, Receive: 627, Length: 627, Exceptions: 627)
+  Write errors:           0
+  Total transferred:      1749810 bytes
+  HTML transferred:       380841 bytes
+  Requests per second:    1065.38 [#/sec] (mean)
+  Time per request:       938.636 [ms] (mean)
+  Time per request:       0.939 [ms] (mean, across all concurrent requests)
+  Transfer rate:          166.71 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  188 726.6      0    3003
+  Processing:     1  392 1557.9      4    7226
+  Waiting:        0    9 119.3      4    6581
+  Total:          1  580 2262.7      5   10226
+
+  Percentage of the requests served within a certain time (ms)
+    50%      5
+    66%      5
+    75%      5
+    80%      5
+    90%      5
+    95%   9362
+    98%   9781
+    99%  10225
+   100%  10226 (longest request)
+
+Tomcat 6
+---------
+::
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.439 seconds
+  Complete requests:      23356
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6259379 bytes
+  HTML transferred:       1191156 bytes
+  Requests per second:    2237.35 [#/sec] (mean)
+  Time per request:       446.958 [ms] (mean)
+  Time per request:       0.447 [ms] (mean, across all concurrent requests)
+  Transfer rate:          585.55 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    2  65.2      0    3002
+  Processing:     1   39  99.5     23    1937
+  Waiting:        1   39  99.1     23    1937
+  Total:          6   41 121.8     23    4562
+
+  Percentage of the requests served within a certain time (ms)
+    50%     23
+    66%     25
+    75%     26
+    80%     28
+    90%     41
+    95%     47
+    98%    628
+    99%    661
+   100%   4562 (longest request)
+
+  -------------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.115 seconds
+  Complete requests:      32850
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      8803800 bytes
+  HTML transferred:       1675350 bytes
+  Requests per second:    3247.67 [#/sec] (mean)
+  Time per request:       307.913 [ms] (mean)
+  Time per request:       0.308 [ms] (mean, across all concurrent requests)
+  Transfer rate:          849.98 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   29 341.0      0    9006
+  Processing:     3   33 112.1     23    7099
+  Waiting:        1   32 112.0     22    7099
+  Total:          7   61 386.3     23   10100
+
+  Percentage of the requests served within a certain time (ms)
+    50%     23
+    66%     24
+    75%     26
+    80%     27
+    90%     40
+    95%     48
+    98%     67
+    99%    629
+   100%  10100 (longest request)
+
+  ----------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      35569
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      9532463 bytes
+  HTML transferred:       1814019 bytes
+  Requests per second:    3556.89 [#/sec] (mean)
+  Time per request:       281.144 [ms] (mean)
+  Time per request:       0.281 [ms] (mean, across all concurrent requests)
+  Transfer rate:          930.90 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   13 326.3      0    9006
+  Processing:     5   29  57.3     23    7175
+  Waiting:        5   29  57.3     23    7175
+  Total:          8   42 335.2     23    9690
+
+  Percentage of the requests served within a certain time (ms)
+    50%     23
+    66%     24
+    75%     26
+    80%     27
+    90%     38
+    95%     44
+    98%     54
+    99%    207
+   100%   9690 (longest request)
+
+Jetty 6
+-------
+::
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      9203
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      1334435 bytes
+  HTML transferred:       349714 bytes
+  Requests per second:    920.25 [#/sec] (mean)
+  Time per request:       1086.663 [ms] (mean)
+  Time per request:       1.087 [ms] (mean, across all concurrent requests)
+  Transfer rate:          130.31 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  155 1007.5      0    9003
+  Processing:     0   16 241.9      1    6699
+  Waiting:        0   16 241.9      1    6699
+  Total:          0  170 1081.2      1    9699
+
+  Percentage of the requests served within a certain time (ms)
+    50%      1
+    66%      1
+    75%      1
+    80%      1
+    90%      1
+    95%      2
+    98%   3019
+    99%   9084
+   100%   9699 (longest request)
+
+  ---------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      9566
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      1387070 bytes
+  HTML transferred:       363508 bytes
+  Requests per second:    956.60 [#/sec] (mean)
+  Time per request:       1045.372 [ms] (mean)
+  Time per request:       1.045 [ms] (mean, across all concurrent requests)
+  Transfer rate:          135.46 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   64 504.0      0    9002
+  Processing:     0   16 228.5      1    6701
+  Waiting:        0   16 228.5      1    6701
+  Total:          0   79 619.4      1    9703
+
+  Percentage of the requests served within a certain time (ms)
+    50%      1
+    66%      1
+    75%      1
+    80%      1
+    90%      1
+    95%      2
+    98%    232
+    99%   3005
+   100%   9703 (longest request)
+
+  ----------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.132 seconds
+  Complete requests:      14165
+  Failed requests:        21054
+     (Connect: 0, Receive: 10520, Length: 14, Exceptions: 10520)
+  Write errors:           0
+  Total transferred:      543170 bytes
+  HTML transferred:       142348 bytes
+  Requests per second:    1397.99 [#/sec] (mean)
+  Time per request:       715.315 [ms] (mean)
+  Time per request:       0.715 [ms] (mean, across all concurrent requests)
+  Transfer rate:          52.35 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  174 967.0      0    9052
+  Processing:     0   85 256.1     35    4795
+  Waiting:        0   51 222.3      0    4786
+  Total:          0  259 1048.2     35    9300
+
+  Percentage of the requests served within a certain time (ms)
+    50%     35
+    66%     36
+    75%     37
+    80%     38
+    90%     45
+    95%   1463
+    98%   3347
+    99%   4801
+   100%   9300 (longest request)
+
+Fapws
+-----
+::
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   8.508 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6900000 bytes
+  HTML transferred:       1850000 bytes
+  Requests per second:    5876.98 [#/sec] (mean)
+  Time per request:       170.155 [ms] (mean)
+  Time per request:       0.170 [ms] (mean, across all concurrent requests)
+  Transfer rate:          792.01 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0    2  27.1      0    2999
+  Processing:     2   19  34.5     18    6572
+  Waiting:        2   19  34.1     18    6572
+  Total:          7   22  46.0     18    6572
+
+  Percentage of the requests served within a certain time (ms)
+    50%     18
+    66%     18
+    75%     18
+    80%     19
+    90%     19
+    95%     20
+    98%    146
+    99%    164
+   100%   6572 (longest request)
+
+  --------------
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   9.733 seconds
+  Complete requests:      50000
+  Failed requests:        1224
+     (Connect: 0, Receive: 408, Length: 408, Exceptions: 408)
+  Write errors:           0
+  Total transferred:      6843935 bytes
+  HTML transferred:       1834941 bytes
+  Requests per second:    5137.15 [#/sec] (mean)
+  Time per request:       194.661 [ms] (mean)
+  Time per request:       0.195 [ms] (mean, across all concurrent requests)
+  Transfer rate:          686.69 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   58 413.7      0    3006
+  Processing:     0  100 716.6     18    6723
+  Waiting:        0   45 394.2     18    6723
+  Total:          7  158 1078.4     18    9725
+
+  Percentage of the requests served within a certain time (ms)
+    50%     18
+    66%     18
+    75%     19
+    80%     19
+    90%     20
+    95%     22
+    98%    253
+    99%   9696
+   100%   9725 (longest request)
+
+  -------------
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   9.875 seconds
+  Complete requests:      50000
+  Failed requests:        420
+     (Connect: 0, Receive: 140, Length: 140, Exceptions: 140)
+  Write errors:           0
+  Total transferred:      6881232 bytes
+  HTML transferred:       1844968 bytes
+  Requests per second:    5063.34 [#/sec] (mean)
+  Time per request:       197.498 [ms] (mean)
+  Time per request:       0.197 [ms] (mean, across all concurrent requests)
+  Transfer rate:          680.51 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   62 424.0      0    3002
+  Processing:     0   87 624.8     18    8749
+  Waiting:        0   67 520.8     18    8749
+  Total:          7  149 979.3     18    9714
+
+  Percentage of the requests served within a certain time (ms)
+    50%     18
+    66%     19
+    75%     19
+    80%     20
+    90%     24
+    95%     34
+    98%   3000
+    99%   7268
+   100%   9714 (longest request)
+
+Tornado
+-------
+::
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.020 seconds
+  Complete requests:      24592
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4721664 bytes
+  HTML transferred:       885312 bytes
+  Requests per second:    2454.26 [#/sec] (mean)
+  Time per request:       407.454 [ms] (mean)
+  Time per request:       0.407 [ms] (mean, across all concurrent requests)
+  Transfer rate:          460.17 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  172 968.3      1    9001
+  Processing:    42  108  67.2    108     822
+  Waiting:       41  108  67.3    108     822
+  Total:         44  281 976.7    110    9175
+
+  Percentage of the requests served within a certain time (ms)
+    50%    110
+    66%    121
+    75%    122
+    80%    124
+    90%    146
+    95%    472
+    98%   3133
+    99%   3187
+   100%   9175 (longest request)
+
+  ---------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.084 seconds
+  Complete requests:      26301
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5049792 bytes
+  HTML transferred:       946836 bytes
+  Requests per second:    2608.13 [#/sec] (mean)
+  Time per request:       383.417 [ms] (mean)
+  Time per request:       0.383 [ms] (mean, across all concurrent requests)
+  Transfer rate:          489.02 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  186 950.0      1    9002
+  Processing:    37  110  99.7    101    2339
+  Waiting:       37  109  99.7    100    2338
+  Total:         45  296 976.6    102    9329
+
+  Percentage of the requests served within a certain time (ms)
+    50%    102
+    66%    110
+    75%    111
+    80%    112
+    90%    140
+    95%    419
+    98%   3203
+    99%   3341
+   100%   9329 (longest request)
+
+  ------------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      22952
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4406784 bytes
+  HTML transferred:       826272 bytes
+  Requests per second:    2295.18 [#/sec] (mean)
+  Time per request:       435.696 [ms] (mean)
+  Time per request:       0.436 [ms] (mean, across all concurrent requests)
+  Transfer rate:          430.35 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  161 770.2      1    9004
+  Processing:    14  107  99.9     80    8661
+  Waiting:       14  107  99.8     80    8661
+  Total:         21  269 789.9     82    9163
+
+  Percentage of the requests served within a certain time (ms)
+    50%     82
+    66%    113
+    75%    128
+    80%    139
+    90%    176
+    95%    397
+    98%   3177
+    99%   3180
+   100%   9163 (longest request)
+
+Phusion/Rack + Apache MPM
+-------------------------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.002 seconds
+  Complete requests:      15906
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5243931 bytes
+  HTML transferred:       589743 bytes
+  Requests per second:    1590.22 [#/sec] (mean)
+  Time per request:       628.843 [ms] (mean)
+  Time per request:       0.629 [ms] (mean, across all concurrent requests)
+  Transfer rate:          511.98 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   58 471.3      4    9086
+  Processing:     6  137 530.8     69    7967
+  Waiting:        3  132 530.1     65    7965
+  Total:         38  196 755.1     74    9175
+
+  Percentage of the requests served within a certain time (ms)
+    50%     74
+    66%     85
+    75%     93
+    80%    106
+    90%    152
+    95%    246
+    98%   2017
+    99%   3817
+   100%   9175 (longest request)
+
+  -----------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.054 seconds
+  Complete requests:      17706
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5825274 bytes
+  HTML transferred:       655122 bytes
+  Requests per second:    1761.05 [#/sec] (mean)
+  Time per request:       567.843 [ms] (mean)
+  Time per request:       0.568 [ms] (mean, across all concurrent requests)
+  Transfer rate:          565.81 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        5  103 609.1     39    9033
+  Processing:    39  190 882.2     87   10001
+  Waiting:        5  174 878.8     73    9883
+  Total:         65  293 1127.6    130   10048
+
+  Percentage of the requests served within a certain time (ms)
+    50%    130
+    66%    140
+    75%    146
+    80%    152
+    90%    167
+    95%    191
+    98%   3133
+    99%   9102
+   100%  10048 (longest request)
+
+  --------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.016 seconds
+  Complete requests:      14070
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4641203 bytes
+  HTML transferred:       521959 bytes
+  Requests per second:    1404.74 [#/sec] (mean)
+  Time per request:       711.874 [ms] (mean)
+  Time per request:       0.712 [ms] (mean, across all concurrent requests)
+  Transfer rate:          452.52 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   95 663.7      8    9057
+  Processing:    43  148 487.2     71    6442
+  Waiting:       19  140 487.3     66    6426
+  Total:         51  244 875.8     95    9169
+
+  Percentage of the requests served within a certain time (ms)
+    50%     95
+    66%    114
+    75%    131
+    80%    141
+    90%    168
+    95%    528
+    98%   3084
+    99%   6106
+   100%   9169 (longest request)
+
+modwsgi
+-------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.008 seconds
+  Complete requests:      33092
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      10028391 bytes
+  HTML transferred:       1224589 bytes
+  Requests per second:    3306.69 [#/sec] (mean)
+  Time per request:       302.417 [ms] (mean)
+  Time per request:       0.302 [ms] (mean, across all concurrent requests)
+  Transfer rate:          978.59 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   50 536.2      3    9020
+  Processing:     6   65 329.6     36    7021
+  Waiting:        3   62 329.5     34    7018
+  Total:         22  114 652.8     39    9965
+
+  Percentage of the requests served within a certain time (ms)
+    50%     39
+    66%     45
+    75%     53
+    80%     59
+    90%     79
+    95%     95
+    98%    115
+    99%   3036
+   100%   9965 (longest request)
+
+  ------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.011 seconds
+  Complete requests:      36514
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      11079498 bytes
+  HTML transferred:       1352942 bytes
+  Requests per second:    3647.48 [#/sec] (mean)
+  Time per request:       274.162 [ms] (mean)
+  Time per request:       0.274 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1080.82 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   46 316.6     10    3042
+  Processing:    17  111 590.3     39    6642
+  Waiting:        4  106 589.5     35    6628
+  Total:         25  156 823.1     49    8599
+
+  Percentage of the requests served within a certain time (ms)
+    50%     49
+    66%     58
+    75%     66
+    80%     74
+    90%     91
+    95%    119
+    98%    166
+    99%   5667
+   100%   8599 (longest request)
+
+  ------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      1000
+  Time taken for tests:   10.004 seconds
+  Complete requests:      33936
+  Failed requests:        315
+     (Connect: 0, Receive: 105, Length: 105, Exceptions: 105)
+  Write errors:           0
+  Total transferred:      10257762 bytes
+  HTML transferred:       1252598 bytes
+  Requests per second:    3392.24 [#/sec] (mean)
+  Time per request:       294.790 [ms] (mean)
+  Time per request:       0.295 [ms] (mean, across all concurrent requests)
+  Transfer rate:          1001.33 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   42 427.4      7    9016
+  Processing:    14   64 321.6     35    6044
+  Waiting:        0   46 201.7     33    6038
+  Total:         25  106 626.4     41    9069
+
+  Percentage of the requests served within a certain time (ms)
+    50%     41
+    66%     49
+    75%     56
+    80%     59
+    90%     71
+    95%     79
+    98%     91
+    99%   1188
+   100%   9069 (longest request)
+
+.. _ab_10000x:
+
+ab - 10000x
+===========
+
+Landshark
+---------
+::
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.003 seconds
+  Complete requests:      40859
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6728920 bytes
+  HTML transferred:       1518110 bytes
+  Requests per second:    4084.88 [#/sec] (mean)
+  Time per request:       2448.054 [ms] (mean)
+  Time per request:       0.245 [ms] (mean, across all concurrent requests)
+  Transfer rate:          656.96 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  854 1615.1     65    9083
+  Processing:     2  204 608.5     72    6891
+  Waiting:        1  188 607.9     56    6880
+  Total:          4 1058 1849.9    149    9898
+
+  Percentage of the requests served within a certain time (ms)
+    50%    149
+    66%    200
+    75%   1136
+    80%   3033
+    90%   3170
+    95%   3769
+    98%   8272
+    99%   9164
+   100%   9898 (longest request)
+
+  ---------------
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.111 seconds
+  Complete requests:      42958
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7085620 bytes
+  HTML transferred:       1598585 bytes
+  Requests per second:    4248.64 [#/sec] (mean)
+  Time per request:       2353.697 [ms] (mean)
+  Time per request:       0.235 [ms] (mean, across all concurrent requests)
+  Transfer rate:          684.36 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  783 1533.5     85    9103
+  Processing:     2  208 659.3     91    6862
+  Waiting:        1  191 657.6     68    6817
+  Total:          4  991 1814.9    189    9862
+
+  Percentage of the requests served within a certain time (ms)
+    50%    189
+    66%    228
+    75%    749
+    80%   3020
+    90%   3194
+    95%   3249
+    98%   7729
+    99%   9200
+   100%   9862 (longest request)
+
+  --------------
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.113 seconds
+  Complete requests:      44331
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7316860 bytes
+  HTML transferred:       1650755 bytes
+  Requests per second:    4383.46 [#/sec] (mean)
+  Time per request:       2281.305 [ms] (mean)
+  Time per request:       0.228 [ms] (mean, across all concurrent requests)
+  Transfer rate:          706.54 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  788 1643.8     63    9125
+  Processing:     4  207 624.2     72    9139
+  Waiting:        4  190 622.9     55    9098
+  Total:          6  995 1906.5    141    9949
+
+  Percentage of the requests served within a certain time (ms)
+    50%    141
+    66%    242
+    75%    512
+    80%    888
+    90%   3165
+    95%   4557
+    98%   9162
+    99%   9212
+   100%   9949 (longest request)
+
+PHP-5
+-----
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      23126
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6716690 bytes
+  HTML transferred:       903279 bytes
+  Requests per second:    2312.35 [#/sec] (mean)
+  Time per request:       4324.612 [ms] (mean)
+  Time per request:       0.432 [ms] (mean, across all concurrent requests)
+  Transfer rate:          655.85 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  312 1384.4      4    9077
+  Processing:     6  179 747.4     51    7258
+  Waiting:        6  175 746.6     49    7246
+  Total:         30  491 1752.3     56    9239
+
+  Percentage of the requests served within a certain time (ms)
+    50%     56
+    66%     78
+    75%     92
+    80%    109
+    90%    139
+    95%   3107
+    98%   9092
+    99%   9156
+   100%   9239 (longest request)
+
+  --------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.006 seconds
+  Complete requests:      22465
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6515430 bytes
+  HTML transferred:       876213 bytes
+  Requests per second:    2245.07 [#/sec] (mean)
+  Time per request:       4454.205 [ms] (mean)
+  Time per request:       0.445 [ms] (mean, across all concurrent requests)
+  Transfer rate:          635.87 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        1   34 153.8     20    3071
+  Processing:    28   74 176.4     60    5740
+  Waiting:        2   64 175.8     50    5738
+  Total:         40  109 239.2     85    5760
+
+  Percentage of the requests served within a certain time (ms)
+    50%     85
+    66%     96
+    75%    102
+    80%    107
+    90%    117
+    95%    143
+    98%    234
+    99%    785
+   100%   5760 (longest request)
+
+  ----------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.006 seconds
+  Complete requests:      24606
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7154590 bytes
+  HTML transferred:       962169 bytes
+  Requests per second:    2459.11 [#/sec] (mean)
+  Time per request:       4066.504 [ms] (mean)
+  Time per request:       0.407 [ms] (mean, across all concurrent requests)
+  Transfer rate:          698.27 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  371 1464.1      4    9068
+  Processing:     4  295 1070.4     49    5775
+  Waiting:        2  291 1069.2     47    5757
+  Total:         38  667 2124.7     55    9226
+
+  Percentage of the requests served within a certain time (ms)
+    50%     55
+    66%     70
+    75%     83
+    80%     91
+    90%    135
+    95%   8149
+    98%   9100
+    99%   9146
+   100%   9226 (longest request)
+
+CherryPy WSGI
+-------------
+::
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.368 seconds
+  Complete requests:      17515
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      2976320 bytes
+  HTML transferred:       688274 bytes
+  Requests per second:    1689.39 [#/sec] (mean)
+  Time per request:       5919.311 [ms] (mean)
+  Time per request:       0.592 [ms] (mean, across all concurrent requests)
+  Transfer rate:          280.35 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      191  830 851.2    616    3780
+  Processing:   387  873 292.1    761    1563
+  Waiting:      304  709 250.3    652    1456
+  Total:        659 1703 946.9   1403    5214
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1403
+    66%   1590
+    75%   1767
+    80%   2066
+    90%   2210
+    95%   4406
+    98%   4780
+    99%   4937
+   100%   5214 (longest request)
+
+  --------------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.234 seconds
+  Complete requests:      18615
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3108000 bytes
+  HTML transferred:       718725 bytes
+  Requests per second:    1818.87 [#/sec] (mean)
+  Time per request:       5497.931 [ms] (mean)
+  Time per request:       0.550 [ms] (mean, across all concurrent requests)
+  Transfer rate:          296.56 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:       96  886 1105.7    435    3660
+  Processing:   155  775 823.2    616    6654
+  Waiting:       80  679 813.9    512    6572
+  Total:        296 1661 1574.2   1194    9925
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1193
+    66%   1253
+    75%   1672
+    80%   1902
+    90%   3871
+    95%   4309
+    98%   7835
+    99%   8835
+   100%   9925 (longest request)
+
+  -----------------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.443 seconds
+  Complete requests:      17581
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3068320 bytes
+  HTML transferred:       709549 bytes
+  Requests per second:    1683.53 [#/sec] (mean)
+  Time per request:       5939.885 [ms] (mean)
+  Time per request:       0.594 [ms] (mean, across all concurrent requests)
+  Transfer rate:          286.93 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      189 1022 1107.9    566    3838
+  Processing:   395  903 327.6    848    2688
+  Waiting:      184  747 300.6    710    2206
+  Total:        604 1925 1167.9   1555    5432
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1555
+    66%   1755
+    75%   2114
+    80%   2188
+    90%   4296
+    95%   4609
+    98%   4789
+    99%   4823
+   100%   5432 (longest request)
+
+WEBrick
+-------
+::
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.015 seconds
+  Complete requests:      740
+  Failed requests:        1140
+     (Connect: 0, Receive: 380, Length: 380, Exceptions: 380)
+  Write errors:           0
+  Total transferred:      181800 bytes
+  HTML transferred:       13680 bytes
+  Requests per second:    73.89 [#/sec] (mean)
+  Time per request:       135342.743 [ms] (mean)
+  Time per request:       13.534 [ms] (mean, across all concurrent requests)
+  Transfer rate:          17.73 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 1809 1431.8   3002    3010
+  Processing:   504 2449 785.6   3060    7772
+  Waiting:        0  865 1004.4      0    7754
+  Total:        819 4258 2078.0   6062    8087
+
+  Percentage of the requests served within a certain time (ms)
+    50%   6062
+    66%   6067
+    75%   6069
+    80%   6071
+    90%   6073
+    95%   6075
+    98%   6077
+    99%   6090
+   100%   8087 (longest request)
+
+  ----------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.011 seconds
+  Complete requests:      1432
+  Failed requests:        3243
+     (Connect: 0, Receive: 1081, Length: 1081, Exceptions: 1081)
+  Write errors:           0
+  Total transferred:      177255 bytes
+  HTML transferred:       13338 bytes
+  Requests per second:    143.04 [#/sec] (mean)
+  Time per request:       69910.175 [ms] (mean)
+  Time per request:       6.991 [ms] (mean, across all concurrent requests)
+  Transfer rate:          17.29 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 2370 1201.7   3004    3009
+  Processing:   440 4535 1543.2   5376    8386
+  Waiting:        0  470 934.2      0    8378
+  Total:        754 6905 2691.1   8381    9983
+
+  Percentage of the requests served within a certain time (ms)
+    50%   8381
+    66%   8383
+    75%   8384
+    80%   8385
+    90%   8387
+    95%   8389
+    98%   8390
+    99%   8391
+   100%   9983 (longest request)
+
+  -------------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.004 seconds
+  Complete requests:      351
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      177722 bytes
+  HTML transferred:       13338 bytes
+  Requests per second:    35.09 [#/sec] (mean)
+  Time per request:       285021.054 [ms] (mean)
+  Time per request:       28.502 [ms] (mean, across all concurrent requests)
+  Transfer rate:          17.35 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  378 869.3      0    3002
+  Processing:   330 1797 544.0   1746    3164
+  Waiting:      240 1773 544.7   1726    3091
+  Total:        636 2175 992.5   1828    4986
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1828
+    66%   2207
+    75%   2506
+    80%   2687
+    90%   3348
+    95%   4726
+    98%   4874
+    99%   4955
+   100%   4986 (longest request)
+
+Django WSGI
+-----------
+::
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      12510
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      2126700 bytes
+  HTML transferred:       462870 bytes
+  Requests per second:    1250.98 [#/sec] (mean)
+  Time per request:       7993.754 [ms] (mean)
+  Time per request:       0.799 [ms] (mean, across all concurrent requests)
+  Transfer rate:          207.68 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0   87 724.2      0    9006
+  Processing:     1   16 189.4      5    6639
+  Waiting:        0   15 189.4      5    6639
+  Total:          2  102 789.8      5    9644
+
+  Percentage of the requests served within a certain time (ms)
+    50%      5
+    66%      5
+    75%      5
+    80%      5
+    90%      6
+    95%      7
+    98%     57
+    99%   3015
+   100%   9644 (longest request)
+
+  ---------------
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.029 seconds
+  Complete requests:      8292
+  Failed requests:        2181
+     (Connect: 0, Receive: 727, Length: 727, Exceptions: 727)
+  Write errors:           0
+  Total transferred:      1286050 bytes
+  HTML transferred:       279905 bytes
+  Requests per second:    826.83 [#/sec] (mean)
+  Time per request:       12094.444 [ms] (mean)
+  Time per request:       1.209 [ms] (mean, across all concurrent requests)
+  Transfer rate:          125.23 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  414 1034.3      0    3008
+  Processing:     1  602 1877.0      5    6976
+  Waiting:        0   27 226.9      5    6574
+  Total:          1 1016 2770.0      5    9980
+
+  Percentage of the requests served within a certain time (ms)
+    50%      5
+    66%      5
+    75%      5
+    80%      6
+    90%   3640
+    95%   9697
+    98%   9922
+    99%   9978
+   100%   9980 (longest request)
+
+  ---------------
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      5916
+  Failed requests:        4077
+     (Connect: 0, Receive: 1359, Length: 1359, Exceptions: 1359)
+  Write errors:           0
+  Total transferred:      774690 bytes
+  HTML transferred:       168609 bytes
+  Requests per second:    591.60 [#/sec] (mean)
+  Time per request:       16903.387 [ms] (mean)
+  Time per request:       1.690 [ms] (mean, across all concurrent requests)
+  Transfer rate:          75.65 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  740 1293.4      0    3010
+  Processing:     1 1237 2310.9      5    6603
+  Waiting:        0   14 222.8      5    6585
+  Total:          1 1977 3543.8      5    9603
+
+  Percentage of the requests served within a certain time (ms)
+    50%      5
+    66%      5
+    75%     31
+    80%   6649
+    90%   8176
+    95%   9589
+    98%   9597
+    99%   9600
+   100%   9603 (longest request)
+
+Tomcat 6
+--------
+::
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.304 seconds
+  Complete requests:      14169
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3872064 bytes
+  HTML transferred:       736848 bytes
+  Requests per second:    1375.14 [#/sec] (mean)
+  Time per request:       7272.005 [ms] (mean)
+  Time per request:       0.727 [ms] (mean, across all concurrent requests)
+  Transfer rate:          366.99 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  215 1245.5      8    9083
+  Processing:     8   72 202.0     18    1772
+  Waiting:        1   66 198.7     17    1772
+  Total:         13  287 1305.0     32    9699
+
+  Percentage of the requests served within a certain time (ms)
+    50%     32
+    66%     37
+    75%     42
+    80%     47
+    90%     86
+    95%    701
+    98%   4567
+    99%   9024
+   100%   9699 (longest request)
+
+  ------------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.005 seconds
+  Complete requests:      27846
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7473984 bytes
+  HTML transferred:       1422288 bytes
+  Requests per second:    2783.34 [#/sec] (mean)
+  Time per request:       3592.800 [ms] (mean)
+  Time per request:       0.359 [ms] (mean, across all concurrent requests)
+  Transfer rate:          729.55 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  445 1692.1      3    9052
+  Processing:     7   73 341.4     18    6891
+  Waiting:        1   71 339.9     18    6864
+  Total:         14  518 1825.4     25    9889
+
+  Percentage of the requests served within a certain time (ms)
+    50%     25
+    66%     33
+    75%     38
+    80%     43
+    90%    212
+    95%   3261
+    98%   9134
+    99%   9736
+   100%   9889 (longest request)
+
+  ----------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.254 seconds
+  Complete requests:      30244
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      8132728 bytes
+  HTML transferred:       1547646 bytes
+  Requests per second:    2949.40 [#/sec] (mean)
+  Time per request:       3390.515 [ms] (mean)
+  Time per request:       0.339 [ms] (mean, across all concurrent requests)
+  Transfer rate:          774.52 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  374 1229.3     14    9042
+  Processing:     7  114 582.8     21    5906
+  Waiting:        1  111 582.7     18    5904
+  Total:         15  489 1525.6     37    9180
+
+  Percentage of the requests served within a certain time (ms)
+    50%     37
+    66%     42
+    75%     46
+    80%     51
+    90%    537
+    95%   3098
+    98%   7470
+    99%   9029
+   100%   9180 (longest request)
+
+Jetty 6
+-------
+::
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      10481
+  Failed requests:        8493
+     (Connect: 0, Receive: 2831, Length: 2831, Exceptions: 2831)
+  Write errors:           0
+  Total transferred:      1109250 bytes
+  HTML transferred:       290700 bytes
+  Requests per second:    1048.04 [#/sec] (mean)
+  Time per request:       9541.659 [ms] (mean)
+  Time per request:       0.954 [ms] (mean, across all concurrent requests)
+  Transfer rate:          108.32 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:       93 2407 1917.0   1161    9127
+  Processing:   142 2030 1433.6   2236    4987
+  Waiting:        0  803 939.3    506    4398
+  Total:        488 4437 2895.2   3854    9803
+
+  Percentage of the requests served within a certain time (ms)
+    50%   3854
+    66%   6498
+    75%   7442
+    80%   7669
+    90%   7782
+    95%   8381
+    98%   8393
+    99%   8402
+   100%   9803 (longest request)
+
+  ----------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.696 seconds
+  Complete requests:      7616
+  Failed requests:        6
+     (Connect: 0, Receive: 2, Length: 2, Exceptions: 2)
+  Write errors:           0
+  Total transferred:      1104030 bytes
+  HTML transferred:       289332 bytes
+  Requests per second:    712.07 [#/sec] (mean)
+  Time per request:       14043.631 [ms] (mean)
+  Time per request:       1.404 [ms] (mean, across all concurrent requests)
+  Transfer rate:          100.80 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  349 889.9      0    3057
+  Processing:    40  972 470.2    973    7055
+  Waiting:        0  970 460.1    973    4992
+  Total:        470 1321 1128.4    978   10051
+
+  Percentage of the requests served within a certain time (ms)
+    50%    978
+    66%   1026
+    75%   1055
+    80%   1078
+    90%   1306
+    95%   4019
+    98%   4086
+    99%   7067
+   100%  10051 (longest request)
+
+  ----------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   11.829 seconds
+  Complete requests:      7373
+  Failed requests:        21
+     (Connect: 0, Receive: 7, Length: 7, Exceptions: 7)
+  Write errors:           0
+  Total transferred:      1068070 bytes
+  HTML transferred:       279908 bytes
+  Requests per second:    623.30 [#/sec] (mean)
+  Time per request:       16043.568 [ms] (mean)
+  Time per request:       1.604 [ms] (mean, across all concurrent requests)
+  Transfer rate:          88.18 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 1127 1429.6    431    4278
+  Processing:   112  848 440.0    790    3016
+  Waiting:        0  743 374.4    755    1578
+  Total:        729 1975 1761.5    947    6018
+
+  Percentage of the requests served within a certain time (ms)
+    50%    947
+    66%   1289
+    75%   1664
+    80%   4915
+    90%   5182
+    95%   5356
+    98%   5494
+    99%   5518
+   100%   6018 (longest request)
+
+Fapws
+-----
+::
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   9.414 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6960996 bytes
+  HTML transferred:       1866354 bytes
+  Requests per second:    5311.27 [#/sec] (mean)
+  Time per request:       1882.790 [ms] (mean)
+  Time per request:       0.188 [ms] (mean, across all concurrent requests)
+  Transfer rate:          722.10 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  804 1144.2    221    3251
+  Processing:    46  351 401.6    225    4154
+  Waiting:       29  240 319.8    161    4113
+  Total:         88 1155 1260.8    473    7248
+
+  Percentage of the requests served within a certain time (ms)
+    50%    473
+    66%   1309
+    75%   1619
+    80%   1871
+    90%   3366
+    95%   3494
+    98%   3777
+    99%   4435
+   100%   7248 (longest request)
+
+  ------------
+
+  erver Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   9.406 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6926182 bytes
+  HTML transferred:       1854366 bytes
+  Requests per second:    5315.75 [#/sec] (mean)
+  Time per request:       1881.203 [ms] (mean)
+  Time per request:       0.188 [ms] (mean, across all concurrent requests)
+  Transfer rate:          719.10 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  699 1121.3    157    3182
+  Processing:    22  357 435.5    163    4028
+  Waiting:       17  212 291.5    116    3984
+  Total:         70 1056 1199.5    335    7063
+
+  Percentage of the requests served within a certain time (ms)
+    50%    335
+    66%   1399
+    75%   1538
+    80%   1651
+    90%   3297
+    95%   3346
+    98%   3432
+    99%   3770
+   100%   7063 (longest request)
+
+  -----------
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   9.974 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7069326 bytes
+  HTML transferred:       1895399 bytes
+  Requests per second:    5012.86 [#/sec] (mean)
+  Time per request:       1994.870 [ms] (mean)
+  Time per request:       0.199 [ms] (mean, across all concurrent requests)
+  Transfer rate:          692.14 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  671 1084.7    195    3253
+  Processing:    52  516 639.7    214    4529
+  Waiting:       33  334 450.6    153    4425
+  Total:        108 1187 1217.7    444    5657
+
+  Percentage of the requests served within a certain time (ms)
+    50%    444
+    66%   1942
+    75%   2136
+    80%   2242
+    90%   3374
+    95%   3456
+    98%   3530
+    99%   3955
+   100%   5657 (longest request)
+
+Tornado
+-------
+::
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.007 seconds
+  Complete requests:      20425
+  Failed requests:        393
+     (Connect: 0, Receive: 131, Length: 131, Exceptions: 131)
+  Write errors:           0
+  Total transferred:      3899520 bytes
+  HTML transferred:       731160 bytes
+  Requests per second:    2041.13 [#/sec] (mean)
+  Time per request:       4899.252 [ms] (mean)
+  Time per request:       0.490 [ms] (mean, across all concurrent requests)
+  Transfer rate:          380.56 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  890 1587.2    546    9012
+  Processing:    27 1308 1474.0    315    5660
+  Waiting:        0 1268 1436.3    273    5659
+  Total:         35 2198 2140.4   1911    9185
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1911
+    66%   3797
+    75%   3881
+    80%   3932
+    90%   4146
+    95%   4280
+    98%   9102
+    99%   9121
+   100%   9185 (longest request)
+
+  ---------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.002 seconds
+  Complete requests:      23470
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4515648 bytes
+  HTML transferred:       846684 bytes
+  Requests per second:    2346.64 [#/sec] (mean)
+  Time per request:       4261.417 [ms] (mean)
+  Time per request:       0.426 [ms] (mean, across all concurrent requests)
+  Transfer rate:          440.91 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  687 1554.7     42    9011
+  Processing:    24 1214 1431.2    210    7467
+  Waiting:       23 1210 1431.3    205    7467
+  Total:         34 1901 2001.1   1001    9236
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1001
+    66%   3518
+    75%   3565
+    80%   3569
+    90%   3581
+    95%   3595
+    98%   9123
+    99%   9218
+   100%   9236 (longest request)
+
+  ----------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.009 seconds
+  Complete requests:      24083
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4623936 bytes
+  HTML transferred:       866988 bytes
+  Requests per second:    2406.20 [#/sec] (mean)
+  Time per request:       4155.939 [ms] (mean)
+  Time per request:       0.416 [ms] (mean, across all concurrent requests)
+  Transfer rate:          451.16 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  625 1368.1    241    9009
+  Processing:    21 1208 1433.6    167    3503
+  Waiting:       19 1204 1433.7    164    3501
+  Total:         32 1832 1823.2    944    9465
+
+  Percentage of the requests served within a certain time (ms)
+    50%    944
+    66%   3333
+    75%   3454
+    80%   3461
+    90%   3490
+    95%   3496
+    98%   3901
+    99%   9117
+   100%   9465 (longest request)
+
+Phusion/Rack + Apache MPM
+-------------------------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.031 seconds
+  Complete requests:      11234
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3714739 bytes
+  HTML transferred:       417767 bytes
+  Requests per second:    1119.96 [#/sec] (mean)
+  Time per request:       8928.853 [ms] (mean)
+  Time per request:       0.893 [ms] (mean, across all concurrent requests)
+  Transfer rate:          361.66 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  189 918.5      5    9129
+  Processing:    63  174 506.7     90    6924
+  Waiting:       59  167 506.6     83    6921
+  Total:         66  364 1155.2    106    9408
+
+  Percentage of the requests served within a certain time (ms)
+    50%    106
+    66%    134
+    75%    150
+    80%    169
+    90%    237
+    95%    925
+    98%   5745
+    99%   6183
+   100%   9408 (longest request)
+
+  ----------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.011 seconds
+  Complete requests:      13917
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4595143 bytes
+  HTML transferred:       516779 bytes
+  Requests per second:    1390.14 [#/sec] (mean)
+  Time per request:       7193.504 [ms] (mean)
+  Time per request:       0.719 [ms] (mean, across all concurrent requests)
+  Transfer rate:          448.24 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        5  156 715.6     39    9112
+  Processing:    41  173 568.3    101    5516
+  Waiting:        6  157 568.4     87    5490
+  Total:         91  329 1093.5    139    9290
+
+  Percentage of the requests served within a certain time (ms)
+    50%    139
+    66%    148
+    75%    155
+    80%    161
+    90%    189
+    95%    284
+    98%   3288
+    99%   8108
+   100%   9290 (longest request)
+
+  ------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/~
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.026 seconds
+  Complete requests:      12342
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4072033 bytes
+  HTML transferred:       457949 bytes
+  Requests per second:    1230.94 [#/sec] (mean)
+  Time per request:       8123.872 [ms] (mean)
+  Time per request:       0.812 [ms] (mean, across all concurrent requests)
+  Transfer rate:          396.61 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        2  220 954.5     40    9075
+  Processing:    15  163 422.3    108    5763
+  Waiting:       15  146 422.5     90    5750
+  Total:         83  384 1145.1    147    9475
+
+  Percentage of the requests served within a certain time (ms)
+    50%    147
+    66%    160
+    75%    170
+    80%    178
+    90%    230
+    95%    485
+    98%   3895
+    99%   6694
+   100%   9475 (longest request)
+
+modwsgi
+-------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.003 seconds
+  Complete requests:      20342
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6171504 bytes
+  HTML transferred:       753616 bytes
+  Requests per second:    2033.62 [#/sec] (mean)
+  Time per request:       4917.338 [ms] (mean)
+  Time per request:       0.492 [ms] (mean, across all concurrent requests)
+  Transfer rate:          602.51 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  523 1879.7      4    9036
+  Processing:    13  174 747.5     53    6379
+  Waiting:       12  170 746.3     51    6376
+  Total:         35  697 2155.9     58    9387
+
+  Percentage of the requests served within a certain time (ms)
+    50%     58
+    66%     74
+    75%     91
+    80%    108
+    90%    172
+    95%   8750
+    98%   9105
+    99%   9114
+   100%   9387 (longest request)
+
+  -------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.293 seconds
+  Complete requests:      21294
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6463596 bytes
+  HTML transferred:       789284 bytes
+  Requests per second:    2068.76 [#/sec] (mean)
+  Time per request:       4833.825 [ms] (mean)
+  Time per request:       0.483 [ms] (mean, across all concurrent requests)
+  Transfer rate:          613.23 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        2  134 580.9     11    3040
+  Processing:    13  241 989.3     56    7535
+  Waiting:        5  234 982.8     52    7528
+  Total:         41  375 1484.7     68    9333
+
+  Percentage of the requests served within a certain time (ms)
+    50%     68
+    66%     75
+    75%     81
+    80%     85
+    90%    116
+    95%    428
+    98%   8461
+    99%   8869
+   100%   9333 (longest request)
+
+  -----------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      10000
+  Time taken for tests:   10.008 seconds
+  Complete requests:      22454
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6812955 bytes
+  HTML transferred:       831945 bytes
+  Requests per second:    2243.71 [#/sec] (mean)
+  Time per request:       4456.911 [ms] (mean)
+  Time per request:       0.446 [ms] (mean, across all concurrent requests)
+  Transfer rate:          664.83 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        6  383 1544.5     21    9073
+  Processing:    29  225 868.0     63    5301
+  Waiting:        5  214 868.0     54    5289
+  Total:         54  608 1990.9     83    9206
+
+  Percentage of the requests served within a certain time (ms)
+    50%     83
+    66%     97
+    75%    104
+    80%    110
+    90%    147
+    95%   8037
+    98%   9125
+    99%   9138
+   100%   9206 (longest request)
+
+.. _ab_20000x:
+
+ab - 20000x
+===========
+
+Landshark
+---------
+::
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.037 seconds
+  Complete requests:      30472
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5252100 bytes
+  HTML transferred:       1184925 bytes
+  Requests per second:    3036.09 [#/sec] (mean)
+  Time per request:       6587.421 [ms] (mean)
+  Time per request:       0.329 [ms] (mean, across all concurrent requests)
+  Transfer rate:          511.03 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      137 1053 1160.1    517    3634
+  Processing:   306  586 231.6    559    5573
+  Waiting:      243  454 217.8    421    5446
+  Total:        629 1640 1197.6   1182    8953
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1182
+    66%   1297
+    75%   1449
+    80%   1701
+    90%   3985
+    95%   4190
+    98%   4252
+    99%   4368
+   100%   8953 (longest request)
+
+  --------------
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.224 seconds
+  Complete requests:      28362
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4890480 bytes
+  HTML transferred:       1103340 bytes
+  Requests per second:    2774.11 [#/sec] (mean)
+  Time per request:       7209.523 [ms] (mean)
+  Time per request:       0.360 [ms] (mean, across all concurrent requests)
+  Transfer rate:          467.13 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:       64 1063 1081.1    676    4020
+  Processing:   272  801 468.3    732    6077
+  Waiting:       32  594 459.7    565    5946
+  Total:        555 1864 1260.2   1420    9462
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1420
+    66%   1706
+    75%   1902
+    80%   1961
+    90%   4213
+    95%   4291
+    98%   4915
+    99%   5035
+   100%   9462 (longest request)
+
+  ----------------
+
+  Server Software:        Landshark/DEV-1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.370 seconds
+  Complete requests:      31089
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5305236 bytes
+  HTML transferred:       1196913 bytes
+  Requests per second:    2997.86 [#/sec] (mean)
+  Time per request:       6671.415 [ms] (mean)
+  Time per request:       0.334 [ms] (mean, across all concurrent requests)
+  Transfer rate:          499.59 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:       52  866 1011.3    511    3585
+  Processing:   252  516 144.6    535    1006
+  Waiting:       43  404 128.7    409     791
+  Total:        468 1382 1034.5   1085    4359
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1085
+    66%   1172
+    75%   1213
+    80%   1249
+    90%   3737
+    95%   4010
+    98%   4142
+    99%   4223
+   100%   4359 (longest request)
+
+PHP-5
+-----
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      17290
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5014390 bytes
+  HTML transferred:       674349 bytes
+  Requests per second:    1728.76 [#/sec] (mean)
+  Time per request:       11569.011 [ms] (mean)
+  Time per request:       0.578 [ms] (mean, across all concurrent requests)
+  Transfer rate:          489.62 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  443 1641.4      5    9144
+  Processing:     8  186 559.3     61    4376
+  Waiting:        5  181 559.1     57    4323
+  Total:         43  629 1898.8     68    9424
+
+  Percentage of the requests served within a certain time (ms)
+    50%     68
+    66%    103
+    75%    111
+    80%    128
+    90%    608
+    95%   5855
+    98%   9220
+    99%   9274
+   100%   9424 (longest request)
+
+  ------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.006 seconds
+  Complete requests:      16834
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4885050 bytes
+  HTML transferred:       656955 bytes
+  Requests per second:    1682.35 [#/sec] (mean)
+  Time per request:       11888.099 [ms] (mean)
+  Time per request:       0.594 [ms] (mean, across all concurrent requests)
+  Transfer rate:          476.76 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  460 1642.5      8    9061
+  Processing:     8  260 890.0     73    9211
+  Waiting:        5  254 889.5     69    9201
+  Total:         57  719 2060.5     91    9981
+
+  Percentage of the requests served within a certain time (ms)
+    50%     91
+    66%    113
+    75%    118
+    80%    122
+    90%    602
+    95%   5781
+    98%   9191
+    99%   9228
+   100%   9981 (longest request)
+
+  ----------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /index.php
+  Document Length:        39 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.004 seconds
+  Complete requests:      17742
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      5148080 bytes
+  HTML transferred:       692328 bytes
+  Requests per second:    1773.49 [#/sec] (mean)
+  Time per request:       11277.215 [ms] (mean)
+  Time per request:       0.564 [ms] (mean, across all concurrent requests)
+  Transfer rate:          502.54 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  540 1431.5     16    9033
+  Processing:    20  416 1036.1     76    6746
+  Waiting:       14  406 1035.2     65    6742
+  Total:         46  955 2093.8    101    9758
+
+  Percentage of the requests served within a certain time (ms)
+    50%    101
+    66%    125
+    75%    138
+    80%    157
+    90%   4843
+    95%   5534
+    98%   8303
+    99%   9167
+   100%   9758 (longest request)
+
+Cherrpy WSGI
+------------
+::
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.014 seconds
+  Complete requests:      12028
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      2445280 bytes
+  HTML transferred:       565471 bytes
+  Requests per second:    1201.06 [#/sec] (mean)
+  Time per request:       16651.945 [ms] (mean)
+  Time per request:       0.833 [ms] (mean, across all concurrent requests)
+  Transfer rate:          238.45 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      606 1132 510.1   1030    4203
+  Processing:  1488 2734 750.1   2847    5613
+  Waiting:      825 1879 531.3   1893    3997
+  Total:       2641 3866 1081.2   3796    8137
+
+  Percentage of the requests served within a certain time (ms)
+    50%   3796
+    66%   3987
+    75%   4117
+    80%   5306
+    90%   5466
+    95%   5550
+    98%   5602
+    99%   7992
+   100%   8137 (longest request)
+
+  -------------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.160 seconds
+  Complete requests:      13159
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      2250400 bytes
+  HTML transferred:       520405 bytes
+  Requests per second:    1295.13 [#/sec] (mean)
+  Time per request:       15442.429 [ms] (mean)
+  Time per request:       0.772 [ms] (mean, across all concurrent requests)
+  Transfer rate:          216.30 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      723 1253 520.0   1104    5215
+  Processing:  1724 3320 877.2   3451    6381
+  Waiting:     1119 2250 660.0   2042    4663
+  Total:       2843 4573 1244.9   4540    8132
+
+  Percentage of the requests served within a certain time (ms)
+    50%   4540
+    66%   4833
+    75%   6042
+    80%   6115
+    90%   6309
+    95%   6342
+    98%   6383
+    99%   6392
+   100%   8132 (longest request)
+
+  ------------
+
+  Server Software:        CherryPy/3.2.0alpha
+  Server Hostname:        localhost
+  Server Port:            8081
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   11.501 seconds
+  Complete requests:      15931
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3017280 bytes
+  HTML transferred:       697746 bytes
+  Requests per second:    1385.24 [#/sec] (mean)
+  Time per request:       14437.908 [ms] (mean)
+  Time per request:       0.722 [ms] (mean, across all concurrent requests)
+  Transfer rate:          256.21 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      473 1321 853.4   1197    5203
+  Processing:  1267 2889 708.0   2928    5352
+  Waiting:      961 2113 583.8   1945    4029
+  Total:       1990 4210 1151.6   4432    8333
+
+  Percentage of the requests served within a certain time (ms)
+    50%   4432
+    66%   4495
+    75%   4973
+    80%   5067
+    90%   5250
+    95%   5340
+    98%   7501
+    99%   7533
+   100%   8333 (longest request)
+
+WEBrick
+-------
+::
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.047 seconds
+  Complete requests:      309
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      156045 bytes
+  HTML transferred:       11742 bytes
+  Requests per second:    30.76 [#/sec] (mean)
+  Time per request:       650283.107 [ms] (mean)
+  Time per request:       32.514 [ms] (mean, across all concurrent requests)
+  Transfer rate:          15.17 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  551 931.0      0    3011
+  Processing:   489 1980 651.8   1946    4525
+  Waiting:      446 1956 652.6   1925    4485
+  Total:       1090 2531 1209.1   2227    7536
+
+  Percentage of the requests served within a certain time (ms)
+    50%   2226
+    66%   2428
+    75%   2641
+    80%   3057
+    90%   4641
+    95%   4856
+    98%   7234
+    99%   7413
+   100%   7536 (longest request)
+
+  --------------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      347
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      175235 bytes
+  HTML transferred:       13186 bytes
+  Requests per second:    34.70 [#/sec] (mean)
+  Time per request:       576422.767 [ms] (mean)
+  Time per request:       28.821 [ms] (mean, across all concurrent requests)
+  Transfer rate:          17.11 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  513 932.1      0    3004
+  Processing:   372 1750 507.7   1691    3078
+  Waiting:      329 1727 508.1   1670    3062
+  Total:        929 2263 1036.4   1747    4913
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1747
+    66%   2269
+    75%   2592
+    80%   2875
+    90%   4553
+    95%   4711
+    98%   4811
+    99%   4869
+   100%   4913 (longest request)
+
+  -------------
+
+  Server Software:        WEBrick/1.3.1
+  Server Hostname:        localhost
+  Server Port:            3000
+
+  Document Path:          /hello
+  Document Length:        38 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.012 seconds
+  Complete requests:      1246
+  Failed requests:        2760
+     (Connect: 0, Receive: 920, Length: 920, Exceptions: 920)
+  Write errors:           0
+  Total transferred:      165097 bytes
+  HTML transferred:       12388 bytes
+  Requests per second:    124.45 [#/sec] (mean)
+  Time per request:       160706.035 [ms] (mean)
+  Time per request:       8.035 [ms] (mean, across all concurrent requests)
+  Transfer rate:          16.10 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 2422 1151.9   3011    3033
+  Processing:   102 4331 1557.1   5205    5420
+  Waiting:        0  456 820.4      0    3895
+  Total:        712 6753 2621.1   8219    8433
+
+  Percentage of the requests served within a certain time (ms)
+    50%   8219
+    66%   8232
+    75%   8250
+    80%   8263
+    90%   8289
+    95%   8424
+    98%   8430
+    99%   8431
+   100%   8433 (longest request)
+
+Django WSGI
+-----------
+::
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      9573
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      1627410 bytes
+  HTML transferred:       354201 bytes
+  Requests per second:    957.25 [#/sec] (mean)
+  Time per request:       20893.152 [ms] (mean)
+  Time per request:       1.045 [ms] (mean, across all concurrent requests)
+  Transfer rate:          158.92 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  100 537.9      0    3049
+  Processing:     1   17 175.5      5    6960
+  Waiting:        1   17 175.5      4    6960
+  Total:          2  117 618.2      5    9961
+
+  Percentage of the requests served within a certain time (ms)
+    50%      5
+    66%      5
+    75%      5
+    80%      5
+    90%      6
+    95%      8
+    98%   3012
+    99%   3044
+   100%   9961 (longest request)
+
+  ----------------
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      9183
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      1561110 bytes
+  HTML transferred:       339771 bytes
+  Requests per second:    918.29 [#/sec] (mean)
+  Time per request:       21779.612 [ms] (mean)
+  Time per request:       1.089 [ms] (mean, across all concurrent requests)
+  Transfer rate:          152.45 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  157 693.2      0    9005
+  Processing:     1   19 224.7      4    6575
+  Waiting:        0   18 224.7      4    6575
+  Total:          2  176 776.0      5    9572
+
+  Percentage of the requests served within a certain time (ms)
+    50%      5
+    66%      5
+    75%      5
+    80%      5
+    90%      6
+    95%   3002
+    98%   3027
+    99%   3046
+   100%   9572 (longest request)
+
+  -----------------
+
+  Server Software:        WSGIServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8000
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      4972
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      845240 bytes
+  HTML transferred:       183964 bytes
+  Requests per second:    497.20 [#/sec] (mean)
+  Time per request:       40225.652 [ms] (mean)
+  Time per request:       2.011 [ms] (mean, across all concurrent requests)
+  Transfer rate:          82.54 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  833 2606.8      0    9019
+  Processing:     1   12 194.3      4    5593
+  Waiting:        0   12 194.3      4    5593
+  Total:          2  845 2615.1      4    9642
+
+  Percentage of the requests served within a certain time (ms)
+    50%      4
+    66%      5
+    75%      5
+    80%      5
+    90%     19
+    95%   9015
+    98%   9024
+    99%   9036
+   100%   9642 (longest request)
+
+Tomcat 6
+--------
+::
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.663 seconds
+  Complete requests:      18141
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4894455 bytes
+  HTML transferred:       931413 bytes
+  Requests per second:    1701.35 [#/sec] (mean)
+  Time per request:       11755.340 [ms] (mean)
+  Time per request:       0.588 [ms] (mean, across all concurrent requests)
+  Transfer rate:          448.27 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  910 1645.5     38    9101
+  Processing:    13  341 969.5     41    4584
+  Waiting:        1  326 966.2     33    4580
+  Total:         27 1251 2223.6     78    9618
+
+  Percentage of the requests served within a certain time (ms)
+    50%     78
+    66%    121
+    75%   3077
+    80%   3137
+    90%   3775
+    95%   6879
+    98%   7451
+    99%   9139
+   100%   9618 (longest request)
+
+  --------------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.024 seconds
+  Complete requests:      12143
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3264776 bytes
+  HTML transferred:       621282 bytes
+  Requests per second:    1211.35 [#/sec] (mean)
+  Time per request:       16510.493 [ms] (mean)
+  Time per request:       0.826 [ms] (mean, across all concurrent requests)
+  Transfer rate:          318.05 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  837 1336.8     31    3203
+  Processing:     8  328 1003.0     36    6975
+  Waiting:        1  310 998.9     29    6938
+  Total:         19 1165 1979.4     68    9995
+
+  Percentage of the requests served within a certain time (ms)
+    50%     68
+    66%    126
+    75%   3095
+    80%   3153
+    90%   3373
+    95%   5419
+    98%   6867
+    99%   7252
+   100%   9995 (longest request)
+
+  ------------
+
+  Server Software:        Apache-Coyote/1.1
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /hello/hello.jsp
+  Document Length:        51 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.006 seconds
+  Complete requests:      11744
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3147392 bytes
+  HTML transferred:       598944 bytes
+  Requests per second:    1173.74 [#/sec] (mean)
+  Time per request:       17039.583 [ms] (mean)
+  Time per request:       0.852 [ms] (mean, across all concurrent requests)
+  Transfer rate:          307.19 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  952 1579.7     36    9035
+  Processing:    16  228 527.9     38    6855
+  Waiting:        1  217 527.5     31    6854
+  Total:         29 1180 1874.0     73    9894
+
+  Percentage of the requests served within a certain time (ms)
+    50%     73
+    66%    183
+    75%   3101
+    80%   3137
+    90%   3755
+    95%   4740
+    98%   5937
+    99%   9686
+   100%   9894 (longest request)
+
+Jetty 6
+-------
+::
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.000 seconds
+  Complete requests:      5829
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      845205 bytes
+  HTML transferred:       221502 bytes
+  Requests per second:    582.88 [#/sec] (mean)
+  Time per request:       34312.606 [ms] (mean)
+  Time per request:       1.716 [ms] (mean, across all concurrent requests)
+  Transfer rate:          82.54 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 1518 1685.0    744    5049
+  Processing:    97 1489 733.0   1608    9022
+  Waiting:       97 1375 720.7   1454    8995
+  Total:        331 3007 2083.1   1934    9836
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1933
+    66%   2723
+    75%   5840
+    80%   5989
+    90%   6057
+    95%   6118
+    98%   6128
+    99%   6134
+   100%   9836 (longest request)
+
+  -------------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.082 seconds
+  Complete requests:      6346
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      927130 bytes
+  HTML transferred:       242972 bytes
+  Requests per second:    629.41 [#/sec] (mean)
+  Time per request:       31775.720 [ms] (mean)
+  Time per request:       1.589 [ms] (mean, across all concurrent requests)
+  Transfer rate:          89.80 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      162 2247 1879.9    913    5628
+  Processing:    89 1629 1024.5   1239    3444
+  Waiting:       89 1439 965.5   1095    3266
+  Total:        567 3876 2593.2   1907    7253
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1907
+    66%   6758
+    75%   6815
+    80%   6826
+    90%   7220
+    95%   7236
+    98%   7241
+    99%   7242
+   100%   7253 (longest request)
+
+  ------------
+
+  Server Software:        Jetty(6.1.19)
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        38 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.763 seconds
+  Complete requests:      6858
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      998760 bytes
+  HTML transferred:       261744 bytes
+  Requests per second:    637.20 [#/sec] (mean)
+  Time per request:       31387.092 [ms] (mean)
+  Time per request:       1.569 [ms] (mean, across all concurrent requests)
+  Transfer rate:          90.62 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:      112 1827 1719.9    779    5869
+  Processing:    69 1673 1160.7   1160    9235
+  Waiting:       69 1403 1068.9    963    9154
+  Total:        672 3500 2513.3   1770    9905
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1770
+    66%   3872
+    75%   6471
+    80%   6480
+    90%   6967
+    95%   6972
+    98%   7491
+    99%   9466
+   100%   9905 (longest request)
+
+Fapws
+-----
+::
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.013 seconds
+  Complete requests:      47176
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      6895860 bytes
+  HTML transferred:       1848890 bytes
+  Requests per second:    4711.57 [#/sec] (mean)
+  Time per request:       4244.871 [ms] (mean)
+  Time per request:       0.212 [ms] (mean, across all concurrent requests)
+  Transfer rate:          672.56 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:       51 1358 1170.4    812    3734
+  Processing:   508 1318 660.6    970    3849
+  Waiting:      325  799 382.2    675    3527
+  Total:        829 2676 1227.2   2854    6672
+
+  Percentage of the requests served within a certain time (ms)
+    50%   2854
+    66%   3074
+    75%   3218
+    80%   4244
+    90%   4482
+    95%   4740
+    98%   5001
+    99%   5143
+   100%   6672 (longest request)
+
+  -----------
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.309 seconds
+  Complete requests:      50000
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7107138 bytes
+  HTML transferred:       1905537 bytes
+  Requests per second:    4850.03 [#/sec] (mean)
+  Time per request:       4123.688 [ms] (mean)
+  Time per request:       0.206 [ms] (mean, across all concurrent requests)
+  Transfer rate:          673.24 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        1 1177 1059.3    728    9616
+  Processing:   555 1340 764.0    869    7763
+  Waiting:      283  760 375.8    622    7414
+  Total:       1156 2516 1185.5   2100   10272
+
+  Percentage of the requests served within a certain time (ms)
+    50%   2100
+    66%   3037
+    75%   3260
+    80%   3508
+    90%   4547
+    95%   4694
+    98%   4936
+    99%   5239
+   100%  10272 (longest request)
+
+  -----------------
+
+  Server Software:        fapws3/0.3
+  Server Hostname:        localhost
+  Server Port:            8080
+
+  Document Path:          /
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.400 seconds
+  Complete requests:      49945
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      7064910 bytes
+  HTML transferred:       1894215 bytes
+  Requests per second:    4802.54 [#/sec] (mean)
+  Time per request:       4164.460 [ms] (mean)
+  Time per request:       0.208 [ms] (mean, across all concurrent requests)
+  Transfer rate:          663.42 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:       13 1040 876.6    722    3875
+  Processing:   489 1317 711.3    896    3265
+  Waiting:      338  737 347.0    645    3106
+  Total:       1208 2357 1044.6   1733    6785
+
+  Percentage of the requests served within a certain time (ms)
+    50%   1733
+    66%   2866
+    75%   3029
+    80%   3135
+    90%   3656
+    95%   4598
+    98%   4672
+    99%   4803
+   100%   6785 (longest request)
+
+Tornado
+-------
+::
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.008 seconds
+  Complete requests:      23400
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4492800 bytes
+  HTML transferred:       842400 bytes
+  Requests per second:    2338.14 [#/sec] (mean)
+  Time per request:       8553.824 [ms] (mean)
+  Time per request:       0.428 [ms] (mean, across all concurrent requests)
+  Transfer rate:          438.40 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  866 1451.1    702    9010
+  Processing:    34 4601 2506.0   6118    6768
+  Waiting:       26 4592 2504.4   6114    6761
+  Total:         49 5466 2653.4   6867    9285
+
+  Percentage of the requests served within a certain time (ms)
+    50%   6867
+    66%   6889
+    75%   6897
+    80%   6908
+    90%   6924
+    95%   6944
+    98%   9174
+    99%   9218
+   100%   9285 (longest request)
+
+  -----------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.048 seconds
+  Complete requests:      20456
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3927552 bytes
+  HTML transferred:       736416 bytes
+  Requests per second:    2035.73 [#/sec] (mean)
+  Time per request:       9824.479 [ms] (mean)
+  Time per request:       0.491 [ms] (mean, across all concurrent requests)
+  Transfer rate:          381.70 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0 1001 1481.3    726    9028
+  Processing:    84 5291 2531.5   6637    7313
+  Waiting:       72 5253 2515.8   6616    7185
+  Total:        106 6293 2524.5   7444    9963
+
+  Percentage of the requests served within a certain time (ms)
+    50%   7444
+    66%   7587
+    75%   7633
+    80%   7646
+    90%   7674
+    95%   7691
+    98%   9159
+    99%   9210
+   100%   9963 (longest request)
+
+  --------------
+
+  Server Software:        TornadoServer/0.1
+  Server Hostname:        localhost
+  Server Port:            8888
+
+  Document Path:          /
+  Document Length:        36 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.027 seconds
+  Complete requests:      22776
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4384512 bytes
+  HTML transferred:       822096 bytes
+  Requests per second:    2271.47 [#/sec] (mean)
+  Time per request:       8804.880 [ms] (mean)
+  Time per request:       0.440 [ms] (mean, across all concurrent requests)
+  Transfer rate:          427.02 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  812 1428.7    514    9064
+  Processing:    39 4308 2619.3   5935    6780
+  Waiting:       28 4286 2617.6   5923    6761
+  Total:         64 5119 2648.3   6571    9426
+
+  Percentage of the requests served within a certain time (ms)
+    50%   6571
+    66%   6627
+    75%   6688
+    80%   6718
+    90%   6780
+    95%   6840
+    98%   9134
+    99%   9208
+   100%   9426 (longest request)
+
+Phusion/Rack + Apache MPM
+-------------------------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.006 seconds
+  Complete requests:      9717
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3211698 bytes
+  HTML transferred:       361194 bytes
+  Requests per second:    971.08 [#/sec] (mean)
+  Time per request:       20595.706 [ms] (mean)
+  Time per request:       1.030 [ms] (mean, across all concurrent requests)
+  Transfer rate:          313.44 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        1  858 2032.3     24    9135
+  Processing:    13  553 1371.3    118    6983
+  Waiting:        3  541 1366.0    109    6938
+  Total:         86 1411 2782.6    158    9694
+
+  Percentage of the requests served within a certain time (ms)
+    50%    158
+    66%    195
+    75%    224
+    80%   1123
+    90%   7606
+    95%   9217
+    98%   9302
+    99%   9316
+   100%   9694 (longest request)
+
+  -------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.046 seconds
+  Complete requests:      8911
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      2955736 bytes
+  HTML transferred:       332408 bytes
+  Requests per second:    886.99 [#/sec] (mean)
+  Time per request:       22548.073 [ms] (mean)
+  Time per request:       1.127 [ms] (mean, across all concurrent requests)
+  Transfer rate:          287.32 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:       12  245 714.1     77    9078
+  Processing:    68  258 650.1    142    4982
+  Waiting:        7  229 649.5    120    4972
+  Total:        145  504 1196.9    222    9207
+
+  Percentage of the requests served within a certain time (ms)
+    50%    222
+    66%    245
+    75%    262
+    80%    274
+    90%    411
+    95%   3260
+    98%   6832
+    99%   7096
+   100%   9207 (longest request)
+
+  ---------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /rack/
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.180 seconds
+  Complete requests:      10421
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      3439037 bytes
+  HTML transferred:       386761 bytes
+  Requests per second:    1023.68 [#/sec] (mean)
+  Time per request:       19537.392 [ms] (mean)
+  Time per request:       0.977 [ms] (mean, across all concurrent requests)
+  Transfer rate:          329.91 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        3  485 1307.4     23    9108
+  Processing:    26  631 1575.6    108    6047
+  Waiting:        7  617 1569.8     98    5972
+  Total:         84 1116 2611.6    136    9382
+
+  Percentage of the requests served within a certain time (ms)
+    50%    136
+    66%    165
+    75%    186
+    80%    212
+    90%   8207
+    95%   8542
+    98%   8777
+    99%   9276
+   100%   9382 (longest request)
+
+modwsgi
+-------
+::
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   12.223 seconds
+  Complete requests:      13748
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4174734 bytes
+  HTML transferred:       509786 bytes
+  Requests per second:    1124.74 [#/sec] (mean)
+  Time per request:       17781.869 [ms] (mean)
+  Time per request:       0.889 [ms] (mean, across all concurrent requests)
+  Transfer rate:          333.54 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  296 932.1      8    9028
+  Processing:    10  236 610.4     71    3491
+  Waiting:        3  229 609.1     67    3482
+  Total:         45  532 1417.0     80    9941
+
+  Percentage of the requests served within a certain time (ms)
+    50%     80
+    66%    123
+    75%    160
+    80%    174
+    90%    768
+    95%   5386
+    98%   5783
+    99%   6066
+   100%   9941 (longest request)
+
+  ------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   11.217 seconds
+  Complete requests:      15481
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4718619 bytes
+  HTML transferred:       576201 bytes
+  Requests per second:    1380.13 [#/sec] (mean)
+  Time per request:       14491.440 [ms] (mean)
+  Time per request:       0.725 [ms] (mean, across all concurrent requests)
+  Transfer rate:          410.80 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        6  217 724.3     21    3074
+  Processing:    29  358 1215.9     75    8105
+  Waiting:        4  344 1210.9     64    8070
+  Total:         66  575 1840.9     96    9193
+
+  Percentage of the requests served within a certain time (ms)
+    50%     96
+    66%    107
+    75%    121
+    80%    134
+    90%    228
+    95%   3220
+    98%   8638
+    99%   8798
+   100%   9193 (longest request)
+
+  ------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   12.502 seconds
+  Complete requests:      9634
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      2930313 bytes
+  HTML transferred:       357827 bytes
+  Requests per second:    770.61 [#/sec] (mean)
+  Time per request:       25953.627 [ms] (mean)
+  Time per request:       1.298 [ms] (mean, across all concurrent requests)
+  Transfer rate:          228.90 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        9  165 578.1     26    3265
+  Processing:    29  171 354.2     93    4804
+  Waiting:        3  148 348.7     77    4788
+  Total:         68  336 832.9    117    6794
+
+  Percentage of the requests served within a certain time (ms)
+    50%    117
+    66%    196
+    75%    259
+    80%    293
+    90%    439
+    95%    730
+    98%   3353
+    99%   5661
+   100%   6794 (longest request)
+
+  ------------
+
+  Server Software:        Apache/2.2.11
+  Server Hostname:        localhost
+  Server Port:            80
+
+  Document Path:          /modwsgi
+  Document Length:        37 bytes
+
+  Concurrency Level:      20000
+  Time taken for tests:   10.001 seconds
+  Complete requests:      16173
+  Failed requests:        0
+  Write errors:           0
+  Total transferred:      4915266 bytes
+  HTML transferred:       600214 bytes
+  Requests per second:    1617.07 [#/sec] (mean)
+  Time per request:       12368.018 [ms] (mean)
+  Time per request:       0.618 [ms] (mean, across all concurrent requests)
+  Transfer rate:          479.94 [Kbytes/sec] received
+
+  Connection Times (ms)
+		min  mean[+/-sd] median   max
+  Connect:        0  571 1829.6      6    9117
+  Processing:     5  411 1278.0     70    6047
+  Waiting:        4  405 1275.1     67    6013
+  Total:         53  982 2568.0     78    9284
+
+  Percentage of the requests served within a certain time (ms)
+    50%     78
+    66%     87
+    75%    107
+    80%    122
+    90%   3141
+    95%   8746
+    98%   9202
+    99%   9218
+   100%   9284 (longest request)

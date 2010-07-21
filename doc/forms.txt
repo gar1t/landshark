@@ -1,0 +1,189 @@
+==================
+ Forms Processing
+==================
+
+.. note::
+
+   This page is incomplete. Fill in missing XXX information and provide
+   examples illustrating the full feature set of ``shark_form``.
+
+Forms processing is a common problem in web development. Forms processing
+involes:
+
+- Defining a form in terms of data
+- Rendering a form
+- Validate user input
+- Handling validated form data
+
+Here's a simple example of a form processing module in Landshark:
+
+.. literalinclude:: ../examples/src/formproc.erl
+   :linenos:
+
+This example can be found in ``examples/src`` and run using ``make MOD=formproc
+run``.
+
+When rendered as HTML, ``shark_form``  generates the following:
+
+.. code-block:: html
+   :linenos:
+
+   <form method="post" action="?">
+   <fieldset>
+   <ol>
+   <li><label>Name</label>
+   <input name="name" type="text">
+   </li>
+   </ol>
+   </fieldset>
+   <div class="actions">
+   <input name="submit" type="submit" value="Submit">
+   </div>
+   </form>
+
+This is "semantic" HTML that uses ``fieldset`` and ``ol`` elements to organize
+fields. The structure will accommodate most form layouts using
+styles. Developers cannot currently customize this organizational form but will
+be able to in a future releases of Landshark.
+
+Let's break ``formproc`` down piece by piece.
+
+Form Definition
+===============
+
+.. literalinclude:: ../examples/src/formproc.erl
+   :lines: 5-7
+
+A form definition in Landshark is a declaration of form related information:
+
+- Information about the form itself, such its title, description, etc.
+- Form fields, which are used to display and collect form data
+- Form actions, which are used to process the form
+
+This form has a single field and a single action.
+
+In this simple example we're defining a single field named ``name`` and of type
+``text``. There is a single action named ``submit``.
+
+Fields
+------
+
+Fields are provided by the ``fields`` property as a list of tuples with the
+forms::
+
+ | {Name}
+ | {Name, Type}
+ | {Name, Type, [Property]}
+
+Landshark supports the following field types:
+
+- text
+- password
+
+The following field types are planned:
+
+- choice
+- XXX
+
+Each field type supports a set of properties, which may be optionally provided
+as a property list in the third term of the field tuple.
+
+XXX - document each type
+
+- {label, Label}
+- {css_class, CssClass}
+- {id, Id}
+- {default, DefaultValue}
+- {render, RenderFun}
+
+Custom Widgets
+~~~~~~~~~~~~~~
+
+Custom field widgets can be rendering by providing a ``render_widget`` property
+for the field. The render property must be a fun that takes two arguments: the
+field and the env.
+
+Here's an example of a field that provides a custom rendered::
+
+  {zip, text, [{label, "Zip Code"}, {render_widget, fun render_zip/2}]}
+
+Here's the render function::
+
+  render_zip({Name, text, Props}, Env}) ->
+      Val = shark_params:get(Name, Env, ""),
+      {input, [{class, zipcode}, {name, Name}, {value, Val}]}.
+
+Custom Validation
+~~~~~~~~~~~~~~~~~
+
+Field values are validated and converted into an appropriate value in a single
+operation. Landshark provides default validation for each field type. If you
+need custom validation behavior, you can specify a ``validate`` property for
+the field. The function must take two arguments: the field and the env.
+
+The function must return one of:
+
+ | ``{ok, Value}``
+ | ``{error, Error}``
+
+``Value`` is a validated field value. ``Error`` is a tuple ``{Reason,
+Description}``. By default, Landshark forms display the error description in
+the form as an error message.
+
+Here's a field that specifies a custom validation function::
+
+  {zip, text, [{label, "Zip Code"}, {validate, fun validate_zip/2}]}
+
+Here's the validate function::
+
+  validate_zip({Name, text, _Props}, Env}) ->
+      Value = shark_param:get(Name, Env),
+      case re:run(Value, "^\\d{5}([\\-]\\d{4})?$") of
+          nomatch -> {error, {badzip, "Enter a valid US zip code"}};
+          {match, _} -> {ok, Value}
+      end.
+
+Actions
+-------
+
+Actions are tuples of::
+
+ | {Name}
+ | {Name, [Property]}
+
+Supported action properties:
+
+- {label, Label}
+- {id, Id}
+- button
+- {css_class, CssClass}
+
+Actions are used to submit forms. Refer to *Form Processing* below for
+information on using actio names.
+
+Form Processing
+===============
+
+The forms processing is implemented here:
+
+.. literalinclude:: ../examples/src/formproc.erl
+   :lines: 9-20
+
+This pattern is used in all forms processing:
+
+- ``shark_form:process/2`` is called with the Env and the form definition
+- It's return value is used to determine the next step in the process
+
+If ``{form, Form}`` is returned, there were no submitted actions and the form,
+in most cases, should be displayed. The Form term is page content that can be
+included in a response page. See :doc:`pagelayout` for additional information
+on page construction.
+
+If ``{action, ActionResult`` is returned, the form was submitted and the action
+function was called and returned an action result. One of the case clauses
+should match the return value from the action function.
+
+In this case, there are two case clauses. ``{form, Form}`` returns an HTML
+response containing the the form. This applies to all cases where the form is
+not submitted. ``{action, Name}`` handles the case where the form is submitted
+and the ``name`` param is returned by ``action/2``.

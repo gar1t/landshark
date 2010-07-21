@@ -1,0 +1,47 @@
+========
+ Routes
+========
+
+The ``shark_route`` module implements a simple dispatch algorithm that you can
+use to associate URLs with specific applications. This is useful for breaking
+your application into logical parts, each of which is handled by a separate
+Landshark application.
+
+Here's an example of an application that uses the ``dispatch`` function to
+delegate requests to sub-applications. ::
+
+  app(Env) ->
+      shark_route:dispatch(Env, [{"/users", fun users:app/1},
+                                 {"/events", fun events:app/1},
+                                 {"/news", fun news:app/1}]).
+
+The routing algorithm matchs path parts and is not a simple "starts with"
+comparison. For example, the paths "/users" and "/users/" would be handled by
+``users:app/1``, however "/usersettings" would not.
+
+Routes are considered in order from first to last. Requests that cannot be handled by any of the specified applications are sent
+an empty response with status `404`.
+
+To handle any request, use the route "/"::
+
+  app(Env) ->
+      shark_route:dispatch(Env, [{"/static", fun static:app/1},
+                                 {"/", fun default:app/1}]).
+
+You can specify the root path "/" using the route "//". ::
+
+  app(Env) ->
+      shark_route:dispatch(Env, [{"//" fun index:app/1},
+                                 {"/index.html", fun index:app/1}]).
+
+.. note::
+
+   Refer to the ``routes`` application in ``src/examples`` to test the routing
+   behavior of the function::
+
+     cd ``src/examples/src``
+     make MOD=routes run
+
+If this simple scheme is not sufficient for your application, it is relatively
+easy to implement your own routing function. Refer to ``src/shark_route.erl``
+for a starting point.

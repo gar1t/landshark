@@ -1,0 +1,35 @@
+====================
+ Request Parameters
+====================
+
+HTTP parameters are provided in a request either as URL query values or as body
+content.
+
+The easiest way to read request parameters is to use ``shark_param``::
+
+  app(Env) ->
+    Msg = case shark_param:get(name, Env) of
+            undefined -> "I don't know you.";
+            Name -> ["You are ", Name, "."]
+          end.
+    shark_response:ok({html, Msg}).
+
+``shark_param:get/2`` will get a parameter from both GET and POST
+parameters. To read a parameter from a specific request method, use a tuple
+with the first term being either 'GET' or 'POST' and the second term being the
+parameter name (key). For example:
+
+ | ``shark_param:get({'GET', name}, Env)`` 
+ | ``shark_param:get({'POST', name}, Env)``
+
+If there are multiple values for a parameter, ``shark_param:get/2`` will return
+the first one specified (in either the query string or the body content). If
+you want to get all of the values, use ``get_all/2``, which returns a list.
+
+.. note::
+
+  Refer to ``examples/src/params.erl`` for a detailed example of using
+  params. You can run the example::
+
+    cd examples/src
+    make MOD=params run

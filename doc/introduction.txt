@@ -1,0 +1,175 @@
+============
+Introduction
+============
+
+Landshark is a Web framework written in Erlang. Here are the project goals in
+order of priority:
+
+1. Leverage Erlang/OTP for *web applications and supporting services* in a
+   *distributed, highly scalable* environment
+   
+2. Maintain *high stability and performance* for core application functionality
+   
+3. Provide developers with an *easy to use, leveragable* framework
+   
+4. Use *Erlang standards and conventions*
+
+Why Erlang?
+===========
+
+If you primarily work in imperative languages like Java, Ruby, or Python, using
+a functional language like Erlang may feel strange at first.
+
+You may even consider the learning curve too steep.
+
+So what's the payoff?
+
+If you're *just* a simple web app, you should probably look to PHP, Ruby, or
+Python first. These environments will give you far more out of gate -- for web
+app development -- than Erlang. This is not likely to change any time soon.
+
+However, using Erlang for web apps has a number of benefits:
+
+ * Reliable, scalable concurrency model
+ * Support of fault tolerate design
+ * Scalable distribution model
+ * Functional idioms
+
+Fancy talk, but what does this mean?
+
+Erlang is generally considered a highly "concurrent" language. It was designed
+from the outset with concurrency in mind -- specifically, the ability to manage
+tens of thousands of simultaneous communication channels in a single
+switch.
+
+Our :doc:`benchmarks <benchmarks>` suggest that Erlang (more specifically
+Mochiweb, the HTTP server currently used by Landshark) is comparable in
+stability at high load to PHP, the standard bearer for scalable web
+apps. Several of the threaded application servers degraded unrecoverably at
+high levels of concurrent requests.
+
+While Erlang is not a silver bullet for building reliable, scalable apps, it
+fundamentally provides a robust concurrency model that stands up to heavy load
+testing.
+
+Erlang also provides an architectural model for building highly componentized,
+compartmentalized applications. Each component acts as a small, isolated
+"server" in the system with its own lifecycle, state, and message interface. If
+an error occurs in one component, that component can be shutdown and restarted,
+allowing other components in the application to run unaffected. In this way,
+developers can build fault tolerance into their web app.
+
+Another benefit to Erlang is that applications can easily be *distributed*
+across multiple servers. This may not seem like a compelling benefit to web
+developers -- web applications are inherently distributed o being
+with. However, web applications generally spawn non-web applications such email
+services, asynchrnous batch processors, caches, and so on. Erlang gives the
+developer a solid architecture build building *outside* the web application,
+which is a compelling feature.
+
+The final advantage we'll cite is that Erlang is an excellent *functional*
+language. As hopefully you'll see in Landshark, functions are very well suited
+for organizing web app code. While it's true that imperative languages can be
+used "functionally" (that is, making extensive use of small, well organized
+functions), true functional languages tend to enforce good functional coding
+practices -- and this is particular true of Erlang.
+
+Philosphy
+=========
+
+API Design
+~~~~~~~~~~
+
+Landshark's approach to web development is motivated largely by Python's WSGI
+ecosystem.
+
+WSGI is a web oriented interface that is easy to both implement and use. It's
+free from a specific implementation. There are no header files to include or
+libraries to import. It's an application protcol.
+
+Landshark is not attempting to define a new standard for Erlang. However, it is
+adopting the WSGI philosophy of building complex applications using layers of
+simple interfaces.
+
+Landshark applications begin with HTTP's simple request/response cycle. The
+input to a Landshark application is a single :doc:`Environ <environ>`
+argument. The output is a tuple that makes up the HTTP response.
+
+Everything else is built on top of this cycle.
+
+Landshark developers will be asked to work within this relatively low-level
+layer. While Lanshark provides a host of useful functions on top of the
+request/response API, it does not attempt to insulate or "protect" developers
+from it.
+
+This a departure from some of the "full stack" frameworks that are popular
+today.
+
+Specifically, here's what falls outside Landshark's purview:
+
+- MVC (mode-view-controller) or other enforced software design patterns
+- ORMs (object-relational-mappers)
+- Content management and associated administrative interfaces
+
+While these can be implementeed using Landshark (perhaps with the exception of
+ORMs since Erlang is a not an object oriented language), Landshark itself will
+remain relatively "close to the wire" in terms of the depth of framework
+support it provides.
+
+Here's what one can expect from Landshark in terms of API and framework design:
+
+- Transparency of the HTTP request/response cycle
+- Ease of use
+- Avoidance of boilerplate code
+- Encouragement of readable and maintainable developer code
+- Use of standard Erlang libraries and conventions whenever possible
+
+While Landhshark provides a number of "helper" modules, which, when taken as a
+whole, may be viewed as a framework, they are optional. An example of such a
+module is ``shark_form``, which provides a facility for rendering forms and
+processing form input. Developers are encouraged to use these to enhance their
+productivity but are always free to use the low level interface directly or to
+build their own higher level modules.
+
+HTML Rendering
+~~~~~~~~~~~~~~
+
+Landshark does not directly provide text based templated. The examples provided
+use ``shark_html`` to render HTML from Erlang terms. This will undoubtedly rub
+some developers the wrong as text based templates are used as the primary
+"view" declaration in nearly all major web frameworks.
+
+At some point Landshark may adopt a templating scheme for HTML. Even now, it's
+possible (even easy) to use third party templating libraries.
+
+However, you may end up preferring Landshark's use of Erlang terms to specify
+web pages. We certainly hope you try it first!
+
+Database
+~~~~~~~~
+
+If you're used to web frameworks that provide seamless, out of the box support
+for relational databases, Erlang may strike you as being somewhat lacking
+(under statement).
+
+Landshark, therefore, doesn't have a solid database story for developers.
+
+Some basic guidelines:
+
+- There are various forks of a MySQL driver for Erlang, some of which are
+  stable enough for production use. At some point, we'll probably identify one
+  and recommend it. Until then, happy hunting!
+
+- It's not clear whether the ODBC support in Erlang is generally useful. If
+  you have positive experience with it, please let us know.
+
+- Many of the "NoSQL" databases (MongoDB, Riak, Redis, Tokyo Cabinet) have
+  libraries for Erlang, though the quality of the libraries is hit or miss.
+
+- Mnesia is provided with Erlang and is an outstanding database, however, some
+  feel Mnesia is not well suited for web applications.
+
+If you're in doubt as to which database to use and you have any experience with
+MySQL, we recommend finding the latest MySQL driver for Erlang and using it.
+
+Clearly this is an area for improvement!

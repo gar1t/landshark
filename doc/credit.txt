@@ -1,0 +1,38 @@
+======
+Credit
+======
+
+Landshark has borrowed liberally from several ground breaking projects in
+Erlang and Python.
+
+Mochiweb
+========
+
+http://code.google.com/p/mochiweb
+
+  HTTP server 
+    Landshark's outstanding performance characteristics are 100% attributed to
+    Moahiweb's HTTP server.
+
+WSGI
+====
+
+The application interface used by Landshark is derrived from WSGI 2.0.
+
+  http://www.python.org/dev/peps/pep-0333
+    This is the original PEP that defined the WSGI standard.
+
+  http://www.wsgi.org/wsgi/WSGI_2.0
+    This is the working specification of the 2.0 version.
+
+METAL
+=====
+
+  http://wiki.zope.org/ZPT/METAL
+    METAL inspired the :doc:`slots <slots>` design.
+
+SNL
+===
+
+  http://www.spike.com/video/land-shark/2802070
+    Damn funny (apoligies for the ads).

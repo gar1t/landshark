@@ -1,0 +1,28 @@
+==========
+ Examples
+==========
+
+Refer to ``examples/src`` for a list of examples provided with Landshark. Many
+have already been covered in the documentation, but there are some more
+advanced examples as well.
+
+To run an example:
+
+.. code-block:: bash
+
+   cd ``examples/src``
+   make MOD=<module> run
+
+where ``<module>`` is the module name you want to run.
+
+For example, to run the ``userlogin`` example, run ``make MOD=userlogin run``.
+
+.. rubric:: Example Annotations
+
+Below is a list of more detailed example annotations. For a complete list of
+example modules, refer to ``examples/src``.
+
+.. toctree::
+   :maxdepth: 2
+
+   example_userlogin

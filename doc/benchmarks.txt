@@ -1,0 +1,248 @@
+===================
+ Server Benchmarks
+===================
+
+One of the benefits of using Landshark is that it's built on top of a high
+performance HTTP server written in Erlang. While there's a common presumtion
+that anything written in Erlang is "highly concurrent" and "extremely
+fault tolerant", there's no harm in measuring actual performance.
+
+Apache Benchmark
+================
+
+`ab` is a simple tool for measuring an application's performance. For more
+infotrmation, refer to :doc:`ab`.
+
+In these benchmarks, we simply run `ab` for 10 seconds with varying levels of
+concurrent requests.
+
+The command was::
+
+  ab -t 10 -c N -r
+
+where ``N`` is the number of concurrent requests: 100, 1000, 10000, 20000.
+
+The benchnmark application is simply one that displays the message:
+
+  `You're that clever shark, aren't you?`
+
+as either plain text or as HTML.
+
+`ab` was run without the "keep alive" setting for all servers. The environment
+was configured with a ulimit file handle maximum of 64000.
+
+The servers tested include:
+
+- CherryPy WSGI server (Python/threaded)
+- Django (Python/threaded)
+- Fapws (Python+C/events)
+- Jetty 6 (Java/threaded)
+- Landshark DEV-1 (Erlang)
+- PHP 5 (mod_php/threaded)
+- Phusion (mod_passenger/threaded)
+- Tomcat 6 (Java/threaded)
+- Tornado (Python/events)
+- WEBrick (Ruby/threaded)
+
+CherryPy Configuration
+----------------------
+CherryPy was configured with a worker pool of 200. Based on the relatively
+small workload of the test, this seemed to be sufficient to prevent dropped
+connections.
+
+To keep memory usage down (not strictly necessary for the tests, but it
+improved the changes of avoiding swapping) the stack size per thread was
+reduced to 512K.
+
+Django
+------
+Tests were run on the development wsgi server. Like WEBrick, this is probably
+not a candidate for production systems. Nonetheless, it handled itself
+respectably well.
+
+I could not find any obvious settings to improve performance for this server.
+
+Fapws
+-----
+Fapws is a wsgi server that's written in C and uses libev to implement an event
+based HTTP server. The "hello" application is written in Python.
+
+This is a blazing fast server. Unfortunately, it's hard to write event based
+program in Python without rewriting a large number of Python libraries to
+support the particular event model used. Any blocking operations --
+e.g. reading from a disk, accessing a server, etc. will destroy the performance
+of the application.
+
+This server also had a long recovery time between the larger trials. I think
+this may be because it mistakenly tries to write to closed connections.
+
+The server experience a couple segfaults at high loads.
+
+Jetty 6
+-------
+Jetty had the same problem that Tomcat had (see below) in terms of recovering
+after a trial. I used a thread pool of 200 initially and bumped up to 1000 for
+trials of 10K and 20K.
+
+Landshark
+---------
+The one setting that seemed to effect the server's ability to process requests
+while keeping dropped connections down was Mochiweb's ``max`` property, which
+was set at ``10240`` (10K). As of ``DEV-1``, this value is hardcoded in
+Landshark.
+
+``ulimit`` was configured with a max of 64000.
+
+What's particularly impressive is that server recovered immediately after each
+trial and never required a restart to achieve the numbers. This was the only
+server in the batch whose performance did not deteriorate over the tests.
+
+PHP 5
+-----
+PHP under as `mod_php` in `apache2`. The `mpm_worker_module` setting of
+``MaxClients`` was increased to 1024. No other performance modifications were
+made to the environment.
+
+Apache required restarts beween trials in order to achieve the results.
+
+Phusion
+-------
+This ran a Ruby rack application, which is comparable architecturally to WSGI,
+under mod_passenger and Apache MPM.
+
+Tomcat 6
+--------
+Tomcat posted solid numbers, but only because I restarted it between
+trials. If I didn't do this, I'd get a precipitous drop off in
+throughput. E.g. here are the actual results of a running 100 concurrent
+requests without restarts:
+
+=======  ========  =========
+Trial         RPS       Time
+=======  ========  =========
+Trial 1	     3674         27
+Trial 2	     3203         31
+Trial 3	      477        209
+Trial 4	        5      18330
+Trial 5	        0        n/a
+=======  ========  =========
+
+The process spiked CPU for several minutes after the test, suggesting that the
+server was churning through thread management.
+
+I used a threadpool count of both 200 and 1000 and saw the same behavior in
+both bases.
+
+Tornado
+-------
+
+See:
+
+  http://www.tornadoweb.org
+
+Set ulimit -n to 64000 for the server and for ab.
+
+Results
+~~~~~~~
+
+The results for the test are listed below. The benchmarks were performed on a
+VMWare instance of Ubuntu (Hungry Heron) on fairly high horse powered Intel
+based server. It will be difficult to compare them to benchmarks run on other
+machines.
+
+Values are averages of three tests. The raw data from the tests are listed in
+:doc:`benchmarks-raw`.
+
+  *RPS = Requests per second* (larger is better)
+    This is the number of successful (non-error) requests that the server
+    processed during the test. This is a good measurement of the raw potential
+    of a server but does not represent the likely throughput of a real
+    application.
+
+  *Time = Average time in milliseconds per request* (smaller is better)
+    This is the time it took the server, on average, to process a single
+    request.
+
+This is not a rigorous benchmark:
+
+- The test environment including the hardware and OS is not documented
+- `ab` was run on the system under test
+- The server versions aren't carefully documented (though their server HTTP
+  response header provides an indication of what was tested)
+- There are anomalies in some of the results (e.g. at 10K Django failed to
+  serve a significant percentage of requests for a particular test while at 20K
+  it was error free)
+- Errors are not reported (though errors are not counted in RPS so a high error
+  rate is captured in the results -- error stats are available in the raw data)
+
+The environment was held consistent across the tested applications. Apart from
+the shocking results of WEBrick, the other results appear to be consistent with
+the reputations of the servers.
+
+100 Concurrent Requests
+-----------------------
+=============== ====== ===========
+App Server         RPS   Time (ms)
+=============== ====== ===========
+Fapws             7174          14
+Landshark         4479 	        22
+PHP-5             4191 	        24
+modwsgi           3651          27
+Tomcat 6          3554          28
+Tornado           2641          38
+CherryPy WSGI     2102 	        48
+Phusion           1873          54
+Jetty 6            937         107
+Django WSGI        785 	       129
+=============== ====== ===========
+
+1,000 Concurrent Requests
+-------------------------
+=============== ====== ===========
+App Server         RPS   Time (ms)
+=============== ====== ===========
+Fapws             5359         187
+Landshark         4477         224
+modwsgi           3449         290
+PHP 5             3062         345
+Tomcat 6          3014         345
+Tornado           2452         409
+CherryPy WSGI     2126         470
+Phusion           1585         636
+Jetty 6           1095         949
+Django WSGI        953        1057
+=============== ====== ===========
+
+10,000 Concurrent Requests
+--------------------------
+=============== ====== ===========
+App Server         RPS   Time (ms)
+=============== ====== ===========
+Fapws             5213        1920
+Landshark         4239        2361
+Tomcat 6          2369        4752
+Tornado           2265        4439
+PHP 5             2239        4282
+modwsgi           2115        4736
+CherryPy WSGI     1731        5786
+Phusion           1247        8082
+Jetty 6            794       13210
+Django WSGI        890       12330
+=============== ====== ===========
+
+20,000 Concurrent Requests
+--------------------------
+=============== ====== ===========
+App Server         RPS   Time (ms)
+=============== ====== ===========
+Fapws             4788        4178
+Landshark         2936        6823
+Tornado           2214        9061
+PHP 5             1728       11578
+modwsgi           1374       14880
+Tomcat 6          1362       15102
+CherryPy WSGI     1294       15477
+Phusion            961       20894
+Django WSGI        790       27633
+Jetty 6            616       32492
+=============== ====== ===========

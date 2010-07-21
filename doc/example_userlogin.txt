@@ -1,0 +1,112 @@
+============
+ User Login
+============
+
+One of the more common patterns in web applications user authentication. This
+examples shows how a user can be logged in using a form and recalled in
+subsequent requests using session state.
+
+The example also illustrates how functions can be used to decompose the process
+of handling different types of requests. One of the goals of Landshark
+development should be to create understandable and maintainable code.
+
+.. note::
+
+   A typical application of any complexity will use separate modules for each
+   handler. For example, in this example, the functions that handle the root
+   page, the login process, and the logout process could each be implemented in
+   a separate module.
+
+.. rubric:: Main application
+
+The main application is implemented by the ``app/1`` function. It uses the
+``shark_route`` module to dispatch the request to the appropriate handler based
+on the request path.
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:
+   :lines: 75-78
+
+Note that the root page "/" is listed last in the list of routes (line 4). This
+prefix will match any path and so should always be listed last.
+
+.. rubric:: Root page
+
+The root page is handled by the function ``root/1``. It displays the login
+status of the user and provides a link to either log in or log out based on the
+status.
+
+Here's the function.
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:
+   :lines: 66-69
+
+In line 2, the session is read from Env. The use of the empty list as a default
+value ensures that an uninitialized session can be used in the call to
+``proplists:get_value/2`` (line 3).
+
+The function ``user_status/1`` is used to generate the applicable page content.
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:
+   :lines: 8-13
+
+This is common pattern in Landshark applications: functions are used to
+encapsulate page content. This both simplifies calling function and provides a
+point of maintenance and reuse of page rendering logic.
+
+.. rubric:: Login page
+
+The login page more complex because it handles the login POST as well as
+displaying the login form. It uses a pre-processing function
+``login_preprocess/1`` to determine how to handle the request. Based on its
+return value, the login handler will respond in one of three ways:
+
+- Display the login form without a message
+- Display the login form with a message
+- Perform the login
+
+Here's the login handler:
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:
+   :lines: 21-29
+
+A GET indicates that the user wants to view the page.
+
+A POST signifies a login. The user must provide a non-empty login value -- the
+pre-processor checks this and returns the ``missing_login`` atom to signify the
+validation error.
+
+If the user provides a valid login in a POST, it is returned in the tuple
+``{login, Login}``.
+
+``login_view/1`` renders the login form:
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:
+   :lines: 36-42
+
+The final stage of a login is handled by ``login_update``, which updates the
+session and then redirects to the root page:
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:
+   :lines: 50-52
+
+.. rubric:: Logging out
+
+Logging out is simply a matter of clearing the session state. This is handled
+by ``logout/1``, which then redirects to the root page.
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:
+   :lines: 59-61
+
+.. rubric:: Complete listing
+
+Here's the complete module.
+
+.. literalinclude:: ../examples/src/userlogin.erl
+   :linenos:

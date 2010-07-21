@@ -1,0 +1,27 @@
+=======
+ Slots
+=======
+
+Slots extends Landhark's content rendering scheme (see :doc:`pagelayout`) with
+the ability to insert content in predesignated "slots".
+
+A slot is a marker that occurs in Landshark page content::
+
+  {slot myslot, "default slot content}
+
+Slots can be dynamically modified using ``replace``, ``append``, and
+``prepend`` tags that occur elsewhere in the content. For example, to replace
+the text "default slot content" in the above slot::
+
+  {replace myslot, "new slot content"}
+
+Here's an exmple of a page that uses slots to define a simple page structure.
+
+.. literalinclude:: ../examples/src/slots.erl
+
+This example can be run from ``examples/src`` using ``make MOD=slots run``.
+
+.. note::
+
+   The ''slots'' ideas are borrowed from Zope Page Templates, specifically
+   `METAL <http://wiki.zope.org/ZPT/METAL>`_.

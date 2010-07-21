@@ -1,0 +1,63 @@
+====================
+ Coding Conventions
+====================
+
+Rewrite Code That's Hard to Read
+================================
+
+Erlang code can get very hard to read very quickly.
+
+Here are some guidelines that I generally follow to clean thing up.
+
+Avoid Deep Nesting in Functions
+-------------------------------
+
+The use of several nest case statements can make code hard to read and
+maintain. These functions can often be refactored into functions to
+dramatically improve readability.
+
+For example, this::
+
+  page(Values) ->
+      case proplists:get_value(foo, Values) of
+	  undefined ->
+	      ["Foo is not defined."];
+	  Foo ->
+	      ["Foo is ", Foo]
+      end.
+
+Can be refactored as::
+
+  render_foo(undefined) ->
+      ["Foo is not defined."];
+  render_foo(Foo) ->
+      ["Foo is ", Foo].
+
+  page(Values) ->
+      render_foo(proplists:get_value(foo, Values)).
+
+We have roughly the same number of lines, but consider the advantages of the
+second form:
+
+- Each function is trivial to read and understand
+- The `page` algorithm is more explicit through the use of a carefully named
+  function
+- ``render_foo`` is now a feature of the module that can be used and enhanced
+  -- before it was just embedded logic
+
+Use Imports for Commonly Used Functions
+=======================================
+
+These imports are helpful in simplifying your code::
+
+ -import(proplists, [get_value/2, get_value/3])
+ -import(lists, [concat/1])
+ -import(string, [strip/1])
+
+Avoid Dependencies
+==================
+
+Landhshark avoids creating dependencies on other libraries and include files as
+much as possible. It makes extensive use of property lists as data
+structures. While records are a more explicit way of organizing common
+structures, they require includes and lack the flexibility of property lists.

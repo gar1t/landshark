@@ -1,0 +1,11 @@
+To run examples, first examine the paths used in src/Dependencies.in. If they
+aren't correct, copy that file to src/Dependencies and modify the new file.
+
+Once the paths to Mochiweb and Landshark are correct, run a single example
+application as follows:
+
+  make MOD=<module> run
+
+For example, to run the src/hello.erl example:
+
+  make MOD=hello run

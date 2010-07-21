@@ -1,0 +1,16 @@
+======================
+ Development Workflow
+======================
+
+App Testing
+===========
+
+Recommendations:
+
+- Use ``make shell`` to start your application
+- Update the ``ERL_OPTS`` variable in ``Dependencies`` to include `-s` flags
+  for starting procsses (e.g. your application, ``reloader``, etc.)
+- Use Mochiweb's outstanding ``reloader`` module to detect changes in your code
+  and automatically reload the changed modules.
+- Generally, using ``io:format/2`` is faster than setting up the Erlang
+  debugger, though the debugger is useful for tough cases.

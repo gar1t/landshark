@@ -1,0 +1,45 @@
+===========
+ Redirects
+===========
+
+Redirects are commonly used to take the user to a different page after the
+server has processed a form submission. Redirects can also be used to provide
+backward support for old URLs, but that case is not discussed here.
+
+Here is a common algorithm in web applications:
+
+1. The user submits a form to an "update" URL
+2. The server receives a POST request and updates a database
+3. The server responds with a redirect to a "view" URL
+
+While the server could reply with the applicable "view" response directly
+without issuing a redirect, there are some advantages in redirecting:
+
+- The roles of `update` and `view` are kept separate, eliminating the need for
+  the two to interface directly.
+- The browser back button works as expected for the response page since it was
+  accessed using a GET request.
+- Refreshing the response page doesn't trigger another POST request.
+
+To redirect, use ``shark_response:see_other``, providing the target URL and
+optional body content.
+
+Here's an example of an application that updates a file and then redirects the
+user to another page.  ::
+
+  update(Env) ->
+      util:update_file(Env),
+      shark_response:see_other("/").
+
+  view(Env) ->
+      File = util:read_file(),
+      shark_response:ok({html, ["File contents: ", File]}).
+
+  app(Env) ->
+      shark_route:dispatch([{"/update", fun update/1},
+                            {"/", fun view/1}]).
+
+- The module ``util`` is a sample stub to represent the interactions with the
+  file store.
+
+- The ``shark_route`` module is described in the upcoming :doc:`routes` topic.

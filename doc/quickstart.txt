@@ -1,0 +1,137 @@
+============
+ Quickstart
+============
+
+Hello World
+===========
+
+In this exercise, we create a simple Landshark application that displays a
+message to the user when viewed from a web browser.
+
+.. rubric:: Dependencies
+
+Before starting, ensure that you have a recent version of Erlang installed.
+
+You also need Mochiweb and Landshark.
+
+If you don't already have these two libraries installed, refer to
+:doc:`installation`.
+
+.. rubric:: Create the project directory structure
+
+Landshark comes with some basic skeleton makefile based projects to get
+started.  Create a project directory (we recommend creating it in a directory
+containing the Mochiweb and Landshark projects to simplify configuration)::
+
+  $ cp -r landshark/priv/skel/empty shark-quickstart
+  $ cd shark-quickstart
+
+To view the project directory structure::
+
+  $ find .
+  .
+  ./src
+  ./src/Makefile
+  ./src/Dependencies
+  ./ebin
+  ./ebin/.empty
+  ./Makefile
+
+You'll create your source files in the ``src`` directory and use the ``make``
+command to build the project.
+
+.. note::
+
+   Windows is not a makefile friendly OS. If this is your first Erlang project
+   and you're a Windows user, you'll unfortunately feel like a second class
+   citizen at this time (building on Windows is often not supported "out of the
+   box" in Erlang projects). Post a message to the Landshark list to get help
+   setting up a usable development environment.
+
+.. rubric:: Configure dependencies
+
+If Mochiweb and Landshark are installed in the same directory as your project
+``shark-quickstart`` you can skip this step -- the depdencies are already
+setup for you.
+
+If either Mochiweb or Landshark are installed in directories different from
+your project, modify ``src/Dependencies`` to reflect the correct paths.
+
+.. rubric:: Create the application module
+
+Create a file ``src/hello.erl`` that looks like this:
+
+.. literalinclude:: ../examples/src/hello.erl
+
+This is the most basic Landshark application. It provides a bare bones HTTP
+response as an Erlang tuple: a response code, headers and body.
+
+.. note::
+
+   If you're familiar with Mochiweb's API, this looks similar. The difference
+   is that the ``Req`` argument is replaced with an ``Env`` environment
+   variable (nearly identical in structure to that used in WSGI) and the
+   response is provided by returning a value from the function rather than
+   calling ``respond`` on the ``Req`` parameterized module.
+
+.. rubric:: Compile and start the application
+
+Build the project and start an Erlang shell using the makefile ``shell``
+target::
+
+  $ make shell
+
+If you get an error, verify that ``hello.erl`` file is correct and that
+`src/Dependencues`` contains correct paths to Mochiweb and Landshark.
+
+To start the application, type the following into the Erlang shell::
+
+  2> shark_http_server:start_link(8080, {hello, app}).
+  {ok,<0.xx.0>}
+
+.. rubric:: View the application
+
+The server is now listening on port 8080. In your browser, visit the URL:
+
+  ``http://localhost:8080``
+
+You should see the plain text message "You're that clever shark, aren't you?"
+
+.. rubric:: Profile the application
+
+While it's nice to see a message on the screen, one of the benefits of using
+Landshark is that your applications are *fast* and *scalable*. Let's put our
+claims to the test.
+
+Install :doc:`ab` and run the following command while the hello world
+application is running::
+
+  ab -r -c10 -t10 localhost:8080/
+
+Apache benchmark will run for 10 seconds and use 10 concurrent connections to
+the application. When it's completed it will display a number of statistics
+including *requests per second*.
+
+This test does a good job of caclulating the raw throughput of the application
+but it uses a very low level of concurrency. To really stress the application,
+refer to :ref:`ab_bigger`.
+
+Refer to :doc:`benchmarks` for some informal benchmarking results across a
+number of frameworks.
+
+.. rubric:: Recap
+
+* Landshark applications are functions that accept a single "environment"
+  argument, which provides details about the HTTP request. In this case, we
+  didn't use anything from the environ so we named it ``_Env``, using an
+  leading underscore.
+
+* The return value from a Landshark application is a tuple of the *HTTP status
+  code*, *headers*, and *body content*. In this case, we're telling the browser
+  that the request was processed successfully (status code of 200) and that the
+  response body is "plain text". The body content is our message.
+
+* To run the application, we provided the Landshark server with a port to
+  listen on and a application, which is a function that takes a single environ
+  argument. When a requests is made, the server calls the the application
+  function we provided and uses its return value to process the HTTP response.

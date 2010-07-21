@@ -1,0 +1,52 @@
+========
+Sessions
+========
+
+Landshark sessions provide a simple mechanism for associating state with a
+particular client session.
+
+Session data is stored completely in client cookies. For this reason, it is
+limited to approximately 4K byte of data. If your session data could exceed
+this limit, you need to use an alternative state management facility such as a
+database, using a Landshark session value as a key.
+
+Reading Session Values
+======================
+
+Session values are read using ``shark_session:get/1``, providing `Env` as the
+sole argument::
+
+  Session = shark_session:get(Env)
+
+Session can be any Erlang term. ``shark_session:get/1`` returns  ``undefined``
+if there is no session associated with `Env`.
+
+Here's a typical scenario using a sesion::
+
+  app(Env) ->
+      User = case shark_session:get(Env) of
+                 undefined -> undefined;
+                 Session -> propertylists:get_value(user, Session)
+             end,
+      shark_response:ok({html, ["The user is ", User]}).
+
+Setting Session Values
+======================
+
+Session values are set by returning a cookie that is prepared by
+``shark_session:set/1``. Any Erlang term may be provided as the session value.
+
+Here's a typical usage::
+
+  def app(Env) ->
+      case shark_params:get(user, Env) of
+          undefined -> shark_response:ok({html, "User required."});
+          User ->
+              Session = shark_session:set([{user, User}]),
+              shark_response:ok({html, "You logged in."}, [Session])
+      end.
+
+.. note::
+
+   This API appears incomplete. It should expose expiration, security, etc.
+

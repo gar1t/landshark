@@ -1,0 +1,155 @@
+======================
+ The Environ Argument
+======================
+
+The argument passed to Landshark applications mirrors the structure defined in
+the `Python WSGI specification <http://www.python.org/dev/peps/pep-0333/>`_.
+
+For a practical comparison, see :ref:`wsgi_environ`.
+
+Environs are Erlang property lists, which are standard lists that can be read
+from using Erlang's `proplists <http://erlang.org/doc/man/proplists.html>`_
+module.
+
+To read a value from a property list::
+
+  proplist:get_value(Key, List)
+
+To add a value to a property list::
+
+  [{Key, Value}|List]
+
+To extend a property list `List` with a set of new properties from `List2`::
+
+  List2 ++ List1
+
+Property lists may have multiple entries with the same key. This conveniently
+acts as a multi-dict. To get all of the values for a key::
+
+  proplists:get_all_values(Key, List)
+
+.. _wsgi_environ:
+
+WSGI Comparison
+===============
+
+The following is a checkpoint taken from the environ arg created by CherryPy
+for a particular request::
+
+  N 'ACTUAL_SERVER_PROTOCOL': 'HTTP/1.1',
+  Y 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;
+		   q=0.9,*/*;q=0.8',
+  Y 'HTTP_ACCEPT_CHARSET': 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
+  Y 'HTTP_ACCEPT_ENCODING': 'gzip,deflate',
+  Y 'HTTP_ACCEPT_LANGUAGE': 'en-us,en;q=0.5',
+  Y 'HTTP_CACHE_CONTROL': 'max-age=0',
+  Y 'HTTP_CONNECTION': 'keep-alive',
+  Y 'HTTP_COOKIE': '_hello_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+		    Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--7034e1683dd
+		    e43bdb174e04d52f4a4e7392d479d',
+  Y 'HTTP_HOST': 'localhost:8081',
+  Y 'HTTP_KEEP_ALIVE': '300',
+  Y 'HTTP_USER_AGENT': 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1) 
+			Gecko/20090624 Firefox/3.5',
+  Y 'PATH_INFO': '/signin/bar',
+  Y 'QUERY_STRING': 'foo=bar',
+  Y 'REMOTE_ADDR': '127.0.0.1',
+  Y 'REMOTE_PORT': '55886',
+  Y 'REQUEST_METHOD': 'GET',
+  Y 'REQUEST_URI': '/signin/bar?foo=bar',
+  Y 'SCRIPT_NAME': '',
+  Y 'SERVER_NAME': 'dump',
+  Y 'SERVER_PORT': '8081',
+  Y 'SERVER_PROTOCOL': 'HTTP/1.1',
+  N 'SERVER_SOFTWARE': 'CherryPy/3.2.0alpha WSGI Server',
+  N 'wsgi.errors': <open file '<stderr>', mode 'w' at 0xb7dd70c0>,
+    'wsgi.input': <cherrypy.SizeCheckWrapper object at 0xb7b0218c>,
+  N 'wsgi.multiprocess': False,
+  N 'wsgi.multithread': True,
+  N 'wsgi.run_once': False,
+  N 'wsgi.url_scheme': 'http',
+  N 'wsgi.version': (1, 0)}
+
+| Y = supported
+| N = no plans to support
+
+Here's the Landshark environ::
+
+  [{server_protocol,{http,{1,1}}},
+   {request_method,'GET'},
+   {request_uri,"/signin/bar?foo=bar"},
+   {path_info,"/signin/bar"},
+   {script_name,[]},
+   {query_string,"foo=bar"},
+   {remote_addr,{127,0,0,1}},
+   {remote_port,53625},
+   {http_accept,"text/html,application/xhtml+xml,application/xml;q=0.9,*/
+                 *;q=0.8"},
+   {http_accept_charset,"ISO-8859-1,utf-8;q=0.7,*;q=0.7"},
+   {http_accept_encoding,"gzip,deflate"},
+   {http_accept_language,"en-us,en;q=0.5"},
+   {http_cache_control,"max-age=0"},
+   {http_connection,"keep-alive"},
+   {http_cookie,"_hello_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcj
+                 o6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--7034e1
+                 683dde43bdb174e04d52f4a4e7392d479d"},
+   {http_host,"localhost:8080"},
+   {http_keep_alive,"300"},
+   {http_user_agent,"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1) 
+                     Gecko/20090624 Firefox/3.5"},
+   {server_port,8080},
+   {server_name,"garrett-desktop"}]
+
+.. note::
+
+   Run the ``environ`` application in ``src/examples`` to test the environ
+   argument::
+
+     cd ``src/examples/src``
+     make MOD=environ run
+
+Advanced Topic - Design Considerations
+======================================
+
+Why isn't Environ a record?
+
+This is a good question. By using property lists, we can't use pattern matching
+on records, which is a major drawback.
+
+For example::
+
+  app(Env) ->
+      case proplists:get_value(request_method, Env) of
+	 'GET' -> get();
+	 'POST' -> post()
+      end.
+
+Could be::
+
+  app(#env{request_method='GET'}) ->
+      get();
+  app(#env{request_method='POST'}) ->
+      post().
+
+In fact, ``get`` and ``post`` aren't even needed as functions since that
+functionality can be provided by ``app`` directly with this notation.
+
+On the other hand, some macros might fix this::
+
+  app(Env) ->
+      ?dispatch(Env, fun get/1, fun post/1).
+
+Landshark does not records for these reasons:
+
+- Avoids depdencies on non-core Erlang libraries. There's nothing to include
+  with this scheme. This simplifies use of the API.
+
+- Property lists are easy to work with in the shell.
+
+The penalties of Not using records can be mitigated using utility functions and
+macros. To further simplify the code, ``get_value`` can be imported::
+
+  -import(proplists, [get_value/2, get_value/3]).
+
+In the case that this approach effects performance, modules are free to convert
+environ values to more efficient Erlang terms.

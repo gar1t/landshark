@@ -1,0 +1,84 @@
+============================
+ Apache Benchmark Tool (ab)
+============================
+
+Apache benchmark is an easy to use performance measurement tool available from
+the `Apache HTTP server project <http://httpd.apache.org>`_.
+
+If you are running on Ubuntu or Debian, install the `apache2-utils` package,
+which contains the `ab` program.
+
+If you are running OS/X, `ab` is already installed on your sytem.
+
+Refer to `Apache HTTP server benchmarking tool
+<http://httpd.apache.org/docs/2.2/programs/ab.html>`_ for options on using
+`ab`.
+
+A Simple Benchmark
+==================
+
+To test a locally running application using 10 concurrent requests for 10
+seconds, run this command::
+
+  ab -r -c10 -t10 localhost:8080/
+
+Replace the port `8080` with the applicable port for the application.
+
+.. _ab_bigger:
+
+A Bigger Benchmark
+==================
+
+To test higher levels of concurrency, you will probalby need to increase the
+system limits on the number of open file handles. Both `ab` and the application
+you're benchmarking use file descriptors for the socket connections, so each
+concurrent connection requires two file descriptors.
+
+To change the limit on open files on Linux, run the following as root (you can
+`sudo -i` to start a session as root)::
+
+  ulimit -n 64000
+
+You'll need to this within the shell that runs your application as well -- both
+`ab` and the application need higher file descriptor limits.
+
+Once the limits have been increased, restart your web application and run::
+
+  ab -r -c1000 -t10 localhost:8080/
+
+You can continue to increase the number of concurrent reqests beyond 1000 to
+see where the application performance begins to degrade significantly.
+
+This will simulate 1000 concurrent requests hitting your application for 10
+seconds.
+
+You'll want to note the following when you increase the number of concurrent
+users:
+
+* Does the test complete without crashing?
+* How does the increased concurrency effect performance (i.e. requests per
+  second)?
+* How does the increased concurrency effect the average response time?
+
+The throughput of the application will decrease as the number of concurrent
+requests increase. The question is, how rapidly does it decline and is there
+are point at which performance dramatically falls off?
+
+Ideally, an application will continue to serve large numbers of concurrent
+requests at roughly the same throughput - i.e. the overhead for managing
+simultaenous requests is small. This is one of the primary differentiators of
+Landshark because it uses Erlang's light weight threading model. Other
+application servers typically use OS threads or processes, both of which use
+considerably more system resources and, as a result, are more constrained in
+terms of processing concurrent requests.
+
+The average time to process a request will increase as concurrent requests
+increase. Ideally, the increase in processing time is directly proportionate to
+the increase in concurrent requests. I.e. as the concurrent requests double,
+the time to process each request should double. In reality, the degradation is
+generally not linear as there is overhead in managing the concurrent
+requests. Good application servers will maintain linear degradation longer than
+others.
+
+To see how Landshark did relative to other frameworks, refer to
+:doc:`benchmarks`.

@@ -1,0 +1,78 @@
+=========
+ Cookies
+=========
+
+Support for cookies in Landshark is provided at two levels:
+
+* Reading available cookes from `Env`
+* Setting cookies values by providing ``cookie`` properties in a response
+
+Reading Cookies
+===============
+
+Cookies are read from `Env` as a property list using
+``shark_request:get_cookies/1``::
+
+  Cookies = shark_request:get_cookies(Env)
+
+Once you have a cookies property list, you can work with it using Erlang's
+``proplists`` module. In most cases, you just use ``proplists:get_value`` to
+read the cookie value you're interested in.
+
+Cookies used atoms for keys.
+
+Here's a typical example of reading a cookie value::
+
+  Foo = case proplists:get_value(foo, Cookies) of
+            undefined -> "Default value";
+	    Cookie -> Cookie
+        end
+
+Writing Cookies
+===============
+
+Cookies are written by specifying ``Set-Cookie`` headers in the response. The
+easiest way to do this is to provide a ``cookie`` property to one of the
+response functions in ``shark_response``.
+
+Cookie properties must be in the form:
+
+ | ``{cookie, {Name, Value}}``
+ | ``{cookie, {Name, Value, [Option]}}``
+
+For example, the following app sets a `msg` cookie using
+``shark_response:ok``::
+
+  app(_Env) ->
+      MsgCookie = {cookie, {msg, "Hello"}},
+      shark_response:ok({html, "I just set a 'msg' cookie"}, [MsgCookie]).
+
+`Options` is a property list containing one or more of the following options:
+
++-----------------+----------+-----------------------------------------------+
+|Property         |Type      |Description                                    |
++=================+==========+===============================================+
+|``locahost_time``|DateTime  |The basis for calculating the expiration of the|
+|                 |          |Cookie. Defaults to the local system time.     |
++-----------------+----------+-----------------------------------------------+
+|``max_age``      |int()     |The number of seconds befire the cookie        |
+|                 |          |expires.                                       |
++-----------------+----------+-----------------------------------------------+
+|``domain``       |string()  |The domain associated with the cookie.         |
++-----------------+----------+-----------------------------------------------+
+|``secure``       |boolean() |Whether ot not the cookie must be sent only    |
+|                 |          |over HTTPS.                                    |
++-----------------+----------+-----------------------------------------------+
+|``http_only``    |boolean() |Whether or not the cookie must be sent only    |
+|                 |          |over HTTP.                                     |
++-----------------+----------+-----------------------------------------------+
+
+Example
+=======
+
+Below is a complete example of a Landshark application that uses a cookie to
+keep track of the last time a user visited the site.
+
+.. literalinclude:: ../examples/src/cookies.erl
+
+You can run this example from ``examples/src`` using ``make MOD=cookies run``.
