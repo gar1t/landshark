@@ -34,5 +34,13 @@ METAL
 SNL
 ===
 
-  http://www.spike.com/video/land-shark/2802070
-    Damn funny (apoligies for the ads).
+.. raw:: html
+
+ <p>
+ <embed width="640" height="360"
+        src="http://media.mtvnservices.com/mgid:ifilm:video:spike.com:2802070"
+        quality="high" bgcolor="000000" name="efp" align="middle"
+        type="application/x-shockwave-flash"
+        pluginspage="http://www.macromedia.com/go/getflashplayer"
+        flashvars="autoPlay=false" allowfullscreen="true"> </embed>
+ </p>

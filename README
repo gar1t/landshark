@@ -5,6 +5,10 @@
 Documentation is currently maintained as Sphinx sources in the docs directory
 of this project.
 
+Current online documentation is here:
+
+  http://thatclevershark.org
+
 To build the documentation, you need Sphinx installed:
 
   easy_install sphinx

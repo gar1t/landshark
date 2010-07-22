@@ -1,0 +1,11 @@
+==========
+ Download
+==========
+
+Landshark is currently under development at:
+
+  http://github.com/gar1t/landshark
+
+To download the source::
+
+  git clone git://github.com/gar1t/landshark.git

@@ -2,12 +2,9 @@
  Installation
 ==============
 
-Not-Really Installation
-=======================
-
 Landshark doesn't have a proper installation routine at the moment.
 
-For a "not really" installation, grab both Mochiweb and Landshark from github,
+For a pseudo installation, grab both Mochiweb and Landshark from github,
 installing them into a common root directory:
 
 .. code-block:: bash
