@@ -1,2 +1,2 @@
-ERL_OPTS := -pa ../mochiweb/ebin -pa ../landshark/ebin
-ERLC_OPTS := -pa ../mochiweb/ebin -pa ../landshark/ebin
+ERL_OPTS := -pa ../../mochiweb/ebin -pa ../../landshark/ebin
+ERLC_OPTS := -pa ../../mochiweb/ebin -pa ../../landshark/ebin
